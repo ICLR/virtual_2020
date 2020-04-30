@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+  
+  <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="static/css/main.css">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js"
+    integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="static/js/typeahead.bundle.js"></script>
+  <link rel="stylesheet" href="static/css/typeahead.css">
+  <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/lazy_load.css">
+  <script src="static/js/lazy_load.js"></script>
+  <title> ICLR: Piecewise linear activations substantially shape the loss surfaces of neural networks </title>
+</head>
+  <meta name="citation_title" content="Piecewise linear activations substantially shape the loss surfaces of neural networks" />
+  
+  <meta name="citation_author" content="Fengxiang He" />
+  
+  <meta name="citation_author" content="Bohan Wang" />
+  
+  <meta name="citation_author" content="Dacheng Tao" />
+  
+  <meta name="citation_publication_date" content="2020/04"/>
+  <meta name="citation_conference_title" content="Eighth International Conference on Learning Representations" />
+  <meta name="citation_abstract" content="Understanding the loss surface of a neural network is fundamentally important to the understanding of deep learning. This paper presents how piecewise linear activation functions substantially shape the loss surfaces of neural networks. We first prove that the loss surfaces of many neural networks have infinite spurious local minima, which are defined as the local minima with higher empirical risks than the global minima. Our result holds for any neural network with arbitrary depth and arbitrary piecewise linear activation functions (excluding linear functions) under most loss functions in practice with some mild assumptions. This result demonstrates that the networks with piecewise linear activations possess substantial differences to the well-studied linear neural networks. Essentially, the underlying assumptions for the above result are consistent with most practical circumstances where the output layer is narrower than any hidden layer. In addition, the loss surface of a neural network with piecewise linear activations is partitioned into multiple smooth and multilinear cells by nondifferentiable boundaries. The constructed spurious local minima are concentrated in one cell as a valley: they are connected with each other by a continuous path, on which empirical risk is invariant. Further for one-hidden-layer networks, we prove that all local minima in a cell constitute an equivalence class; they are concentrated in a valley; and they are all global minima in the cell." />
+  <meta name="citation_pdf_url" content="http://www.openreview.net/pdf?id=B1x6BTEKwr" />
+  
+  <meta name="citation_keywords" content="loss surface" />
+  
+  <body >
+    <!-- NAV -->
+    
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Exo" rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css?family=Cuprum" rel='stylesheet'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+  integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.28/moment-timezone-with-data.min.js"
+  integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww="
+  crossorigin="anonymous"></script>
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto " id="main-nav" >
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+    <img class="logo" style='visibility: ' src="static/images/ICLR-logo.png"  width="180px" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-right flex-grow-1" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="index.html">Home</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="calendar.html">Schedule</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="workshops.html">Workshops</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="papers.html">Papers</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="about.html">Help</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container">
+      <!-- Title -->
+      <div class="pp-card m-3" style="">
+        <div class="card-header">
+          <h2 class="card-title main-title text-center" style="">
+            Piecewise linear activations substantially shape the loss surfaces of neural networks
+          </h2>
+          <h3 class="card-subtitle mb-2 text-muted text-center">
+            
+            <a href="papers.html?filter=authors&search=Fengxiang He" class="text-muted">Fengxiang He</a>,
+            
+            <a href="papers.html?filter=authors&search=Bohan Wang" class="text-muted">Bohan Wang</a>,
+            
+            <a href="papers.html?filter=authors&search=Dacheng Tao" class="text-muted">Dacheng Tao</a>
+            
+          </h3>
+          <p class="card-text text-center"><span class="">Keywords:</span>
+            
+            <a href="papers.html?filter=keywords&search=loss surface" class="text-secondary text-decoration-none">loss surface</a>
+            
+          </p>
+          <div class="text-center p-3">
+            <a class="card-link" data-toggle="collapse" role="button" href="#details">
+            Abstract
+            </a>
+            <a class="card-link"  target="_blank" href="http://www.openreview.net/pdf?id=B1x6BTEKwr">
+            Paper
+            </a>
+            
+            <a class="card-link"  target="_blank"  href="http://www.openreview.net/forum?id=B1x6BTEKwr">
+            Reviews
+            </a>
+            <!--  -->
+            <!-- <a href="38925637" target="_blank"  class="card-link"> -->
+            <!--   Slides -->
+            <!-- </a> -->
+            <!--  -->
+            <!-- </div> -->
+            <!-- <div class="text-center "> -->
+            <!-- <a href="chat.html?room=channel/poster_35" target="_blank"  class="card-link"> -->
+            <!-- Chat -->
+            <!-- </a> -->
+          </div>
+          <div class=" text-center text-muted text-monospace ">
+            
+          </div>
+        </div>
+      </div>
+      <div id="details" class="pp-card m-3 collapse">
+        <div class="card-body">
+          <p class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Understanding the loss surface of a neural network is fundamentally important to the understanding of deep learning. This paper presents how piecewise linear activation functions substantially shape the loss surfaces of neural networks. We first prove that the loss surfaces of many neural networks have infinite spurious local minima, which are defined as the local minima with higher empirical risks than the global minima. Our result holds for any neural network with arbitrary depth and arbitrary piecewise linear activation functions (excluding linear functions) under most loss functions in practice with some mild assumptions. This result demonstrates that the networks with piecewise linear activations possess substantial differences to the well-studied linear neural networks. Essentially, the underlying assumptions for the above result are consistent with most practical circumstances where the output layer is narrower than any hidden layer. In addition, the loss surface of a neural network with piecewise linear activations is partitioned into multiple smooth and multilinear cells by nondifferentiable boundaries. The constructed spurious local minima are concentrated in one cell as a valley: they are connected with each other by a continuous path, on which empirical risk is invariant. Further for one-hidden-layer networks, we prove that all local minima in a cell constitute an equivalence class; they are concentrated in a valley; and they are all global minima in the cell.
+          </div>
+          </p>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <!-- SlidesLive -->
+    <div class="container" style="background-color:white; padding: 0px;">
+      <div class="row m-2">
+        <div class="col-md-12 col-xs-12 my-auto p-2" >
+
+          <div id="presentation-embed-38925637" class="slp my-auto"></div>
+          <script src='https://slideslive.com/embed_presentation.js'></script>
+          <script>
+            embed = new SlidesLiveEmbed('presentation-embed-38925637', {
+            presentationId: '38925637',
+            autoPlay: false, // change to true to autoplay the embedded presentation
+            verticalEnabled: true,
+            allowHiddenControlsWhenPaused: true,
+            hideTitle: true
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recs -->
+    <p></p>
+    <div  class="container" style="padding-bottom: 30px; padding-top:30px">
+      <center>
+        <h2> Similar Papers </h2>
+      </center>
+    </div>
+    <p></p>
+    <div  class="container" >
+      <div class="row">
+        
+        <div class="col-md-4 col-xs-6">
+          <div class="pp-card" >
+            <div class="pp-card-header" class="text-muted">
+              <a href="poster_rkgOlCVYvB.html" class="text-muted">
+                <h5 class="card-title" align="center">Pure and Spurious Critical Points: a Geometric Study of Linear Networks</h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Matthew Trager,
+                
+                Kathlén Kohn,
+                
+                Joan Bruna,
+                
+              </h6>
+              <center><img class="cards_img" src="https://iclr.github.io/iclr-images/rkgOlCVYvB.png" width="80%"/></center>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-xs-6">
+          <div class="pp-card" >
+            <div class="pp-card-header" class="text-muted">
+              <a href="poster_BkgXHTNtvS.html" class="text-muted">
+                <h5 class="card-title" align="center">Bounds on Over-Parameterization for Guaranteed Existence of Descent Paths in Shallow ReLU Networks</h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Arsalan Sharifnassab,
+                
+                Saber Salehkaleybar,
+                
+                S. Jamaloddin Golestani,
+                
+              </h6>
+              <center><img class="cards_img" src="https://iclr.github.io/iclr-images/BkgXHTNtvS.png" width="80%"/></center>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-xs-6">
+          <div class="pp-card" >
+            <div class="pp-card-header" class="text-muted">
+              <a href="poster_rkgfdeBYvH.html" class="text-muted">
+                <h5 class="card-title" align="center">Effect of Activation Functions on the Training of Overparametrized Neural Nets</h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Abhishek Panigrahi,
+                
+                Abhishek Shetty,
+                
+                Navin Goyal,
+                
+              </h6>
+              <center><img class="cards_img" src="https://iclr.github.io/iclr-images/rkgfdeBYvH.png" width="80%"/></center>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <script type="text/javascript">
+  $(document).ready(function () {
+  
+  if (location.hash !== '') {
+  $('a[href="' + location.hash + '"]').tab('show');
+  }
+  
+  $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+  var hash = $(e.target).attr("href");
+  if (hash.substr(0,1) == "#") {
+  var position = $(window).scrollTop();
+  location.replace("#" + hash.substr(1));
+  $(window).scrollTop(position);
+  }
+  });
+  
+  });
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163955028-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  gtag('config', 'UA-163955028-1');
+</script>
+<footer class="footer bg-light p-4">
+  <div class="container">
+    <p class="float-right"><a href="#">Back to Top</a></p>
+    <p class="text-center">© 2020 International Conference on Learning Representations</p>
+  </div>
+</footer>
+  </body>
+  <script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+</html>

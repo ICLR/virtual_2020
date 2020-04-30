@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  
+  <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="static/css/main.css">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js"
+    integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="static/js/typeahead.bundle.js"></script>
+  <link rel="stylesheet" href="static/css/typeahead.css">
+  <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/lazy_load.css">
+  <script src="static/js/lazy_load.js"></script>
+  <title> ICLR: Differentiable Reasoning over a Virtual Knowledge Base </title>
+</head>
+  <meta name="citation_title" content="Differentiable Reasoning over a Virtual Knowledge Base" />
+  
+  <meta name="citation_author" content="Bhuwan Dhingra" />
+  
+  <meta name="citation_author" content="Manzil Zaheer" />
+  
+  <meta name="citation_author" content="Vidhisha Balachandran" />
+  
+  <meta name="citation_author" content="Graham Neubig" />
+  
+  <meta name="citation_author" content="Ruslan Salakhutdinov" />
+  
+  <meta name="citation_author" content="William W. Cohen" />
+  
+  <meta name="citation_publication_date" content="2020/04"/>
+  <meta name="citation_conference_title" content="Eighth International Conference on Learning Representations" />
+  <meta name="citation_abstract" content="We consider the task of answering complex multi-hop questions using a corpus as a virtual knowledge base (KB). In particular, we describe a neural module, DrKIT, that traverses textual data like a KB, softly following paths of relations between mentions of entities in the corpus. At each step the module uses a combination of sparse-matrix TFIDF indices and a maximum inner product search (MIPS) on a special index of contextual representations of the mentions. This module is differentiable, so the full system can be trained end-to-end using gradient based methods, starting from natural language inputs. We also describe a pretraining scheme for the contextual representation encoder by generating hard negative examples using existing knowledge bases. We show that DrKIT improves accuracy by 9 points on 3-hop questions in the MetaQA dataset, cutting the gap between text-based and KB-based state-of-the-art by 70%. On HotpotQA, DrKIT leads to a 10% improvement over a BERT-based re-ranking approach to retrieving the relevant passages required to answer a question. DrKIT is also very efficient, processing up to 10-100x more queries per second than existing multi-hop systems." />
+  <meta name="citation_pdf_url" content="http://www.openreview.net/pdf?id=SJxstlHFPH" />
+  
+  <meta name="citation_keywords" content="multi hop qa" />
+  
+  <meta name="citation_keywords" content="nlp" />
+  
+  <meta name="citation_keywords" content="question answering" />
+  
+  <meta name="citation_keywords" content="reasoning" />
+  
+  <body >
+    <!-- NAV -->
+    
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Exo" rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css?family=Cuprum" rel='stylesheet'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+  integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.28/moment-timezone-with-data.min.js"
+  integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww="
+  crossorigin="anonymous"></script>
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto " id="main-nav" >
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+    <img class="logo" style='visibility: ' src="static/images/ICLR-logo.png"  width="180px" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-right flex-grow-1" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="index.html">Home</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="calendar.html">Schedule</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="workshops.html">Workshops</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="papers.html">Papers</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="about.html">Help</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container">
+      <!-- Title -->
+      <div class="pp-card m-3" style="">
+        <div class="card-header">
+          <h2 class="card-title main-title text-center" style="">
+            Differentiable Reasoning over a Virtual Knowledge Base
+          </h2>
+          <h3 class="card-subtitle mb-2 text-muted text-center">
+            
+            <a href="papers.html?filter=authors&search=Bhuwan Dhingra" class="text-muted">Bhuwan Dhingra</a>,
+            
+            <a href="papers.html?filter=authors&search=Manzil Zaheer" class="text-muted">Manzil Zaheer</a>,
+            
+            <a href="papers.html?filter=authors&search=Vidhisha Balachandran" class="text-muted">Vidhisha Balachandran</a>,
+            
+            <a href="papers.html?filter=authors&search=Graham Neubig" class="text-muted">Graham Neubig</a>,
+            
+            <a href="papers.html?filter=authors&search=Ruslan Salakhutdinov" class="text-muted">Ruslan Salakhutdinov</a>,
+            
+            <a href="papers.html?filter=authors&search=William W. Cohen" class="text-muted">William W. Cohen</a>
+            
+          </h3>
+          <p class="card-text text-center"><span class="">Keywords:</span>
+            
+            <a href="papers.html?filter=keywords&search=multi hop qa" class="text-secondary text-decoration-none">multi hop qa</a>,
+            
+            <a href="papers.html?filter=keywords&search=nlp" class="text-secondary text-decoration-none">nlp</a>,
+            
+            <a href="papers.html?filter=keywords&search=question answering" class="text-secondary text-decoration-none">question answering</a>,
+            
+            <a href="papers.html?filter=keywords&search=reasoning" class="text-secondary text-decoration-none">reasoning</a>
+            
+          </p>
+          <div class="text-center p-3">
+            <a class="card-link" data-toggle="collapse" role="button" href="#details">
+            Abstract
+            </a>
+            <a class="card-link"  target="_blank" href="http://www.openreview.net/pdf?id=SJxstlHFPH">
+            Paper
+            </a>
+            
+            <a href="http://www.cs.cmu.edu/~bdhingra/pages/drkit.html" target="_blank"  class="card-link">
+            Code
+            </a>
+            
+            <a class="card-link"  target="_blank"  href="http://www.openreview.net/forum?id=SJxstlHFPH">
+            Reviews
+            </a>
+            <!--  -->
+            <!-- <a href="38926142" target="_blank"  class="card-link"> -->
+            <!--   Slides -->
+            <!-- </a> -->
+            <!--  -->
+            <!-- </div> -->
+            <!-- <div class="text-center "> -->
+            <!-- <a href="chat.html?room=channel/poster_433" target="_blank"  class="card-link"> -->
+            <!-- Chat -->
+            <!-- </a> -->
+          </div>
+          <div class=" text-center text-muted text-monospace ">
+            
+            <div> Thursday: Optimisation II 
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div id="details" class="pp-card m-3 collapse">
+        <div class="card-body">
+          <p class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            We consider the task of answering complex multi-hop questions using a corpus as a virtual knowledge base (KB). In particular, we describe a neural module, DrKIT, that traverses textual data like a KB, softly following paths of relations between mentions of entities in the corpus. At each step the module uses a combination of sparse-matrix TFIDF indices and a maximum inner product search (MIPS) on a special index of contextual representations of the mentions. This module is differentiable, so the full system can be trained end-to-end using gradient based methods, starting from natural language inputs. We also describe a pretraining scheme for the contextual representation encoder by generating hard negative examples using existing knowledge bases. We show that DrKIT improves accuracy by 9 points on 3-hop questions in the MetaQA dataset, cutting the gap between text-based and KB-based state-of-the-art by 70%. On HotpotQA, DrKIT leads to a 10% improvement over a BERT-based re-ranking approach to retrieving the relevant passages required to answer a question. DrKIT is also very efficient, processing up to 10-100x more queries per second than existing multi-hop systems.
+          </div>
+          </p>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <!-- SlidesLive -->
+    <div class="container" style="background-color:white; padding: 0px;">
+      <div class="row m-2">
+        <div class="col-md-12 col-xs-12 my-auto p-2" >
+
+          <div id="presentation-embed-38926142" class="slp my-auto"></div>
+          <script src='https://slideslive.com/embed_presentation.js'></script>
+          <script>
+            embed = new SlidesLiveEmbed('presentation-embed-38926142', {
+            presentationId: '38926142',
+            autoPlay: false, // change to true to autoplay the embedded presentation
+            verticalEnabled: true,
+            allowHiddenControlsWhenPaused: true,
+            hideTitle: true
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recs -->
+    <p></p>
+    <div  class="container" style="padding-bottom: 30px; padding-top:30px">
+      <center>
+        <h2> Similar Papers </h2>
+      </center>
+    </div>
+    <p></p>
+    <div  class="container" >
+      <div class="row">
+        
+        <div class="col-md-4 col-xs-6">
+          <div class="pp-card" >
+            <div class="pp-card-header" class="text-muted">
+              <a href="poster_BJlguT4YPr.html" class="text-muted">
+                <h5 class="card-title" align="center">Scalable Neural Methods for Reasoning With a Symbolic Knowledge   Base</h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                William W. Cohen,
+                
+                Haitian Sun,
+                
+                R. Alex Hofer,
+                
+                Matthew Siegler,
+                
+              </h6>
+              <center><img class="cards_img" src="https://iclr.github.io/iclr-images/BJlguT4YPr.png" width="80%"/></center>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-xs-6">
+          <div class="pp-card" >
+            <div class="pp-card-header" class="text-muted">
+              <a href="poster_SJgVHkrYDH.html" class="text-muted">
+                <h5 class="card-title" align="center">Learning to Retrieve Reasoning Paths over Wikipedia Graph for Question Answering</h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Akari Asai,
+                
+                Kazuma Hashimoto,
+                
+                Hannaneh Hajishirzi,
+                
+                Richard Socher,
+                
+                Caiming Xiong,
+                
+              </h6>
+              <center><img class="cards_img" src="https://iclr.github.io/iclr-images/SJgVHkrYDH.png" width="80%"/></center>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-xs-6">
+          <div class="pp-card" >
+            <div class="pp-card-header" class="text-muted">
+              <a href="poster_r1eIiCNYwS.html" class="text-muted">
+                <h5 class="card-title" align="center">Transformer-XH: Multi-Evidence Reasoning with eXtra Hop Attention</h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Chen Zhao,
+                
+                Chenyan Xiong,
+                
+                Corby Rosset,
+                
+                Xia Song,
+                
+                Paul Bennett,
+                
+                Saurabh Tiwary,
+                
+              </h6>
+              <center><img class="cards_img" src="https://iclr.github.io/iclr-images/r1eIiCNYwS.png" width="80%"/></center>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <script type="text/javascript">
+  $(document).ready(function () {
+  
+  if (location.hash !== '') {
+  $('a[href="' + location.hash + '"]').tab('show');
+  }
+  
+  $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+  var hash = $(e.target).attr("href");
+  if (hash.substr(0,1) == "#") {
+  var position = $(window).scrollTop();
+  location.replace("#" + hash.substr(1));
+  $(window).scrollTop(position);
+  }
+  });
+  
+  });
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163955028-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  gtag('config', 'UA-163955028-1');
+</script>
+<footer class="footer bg-light p-4">
+  <div class="container">
+    <p class="float-right"><a href="#">Back to Top</a></p>
+    <p class="text-center">© 2020 International Conference on Learning Representations</p>
+  </div>
+</footer>
+  </body>
+  <script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+</html>

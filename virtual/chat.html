@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  
+  <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="static/css/main.css">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js"
+    integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="static/js/typeahead.bundle.js"></script>
+  <link rel="stylesheet" href="static/css/typeahead.css">
+  <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/lazy_load.css">
+  <script src="static/js/lazy_load.js"></script>
+  <title> ICLR 2020 - Chat </title>
+</head>
+  <body>
+    <!-- NAV -->
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Exo" rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css?family=Cuprum" rel='stylesheet'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+  integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.28/moment-timezone-with-data.min.js"
+  integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww="
+  crossorigin="anonymous"></script>
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto " id="main-nav" >
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+    <img class="logo" style='visibility: ' src="static/images/ICLR-logo.png"  width="180px" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-right flex-grow-1" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="index.html">Home</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="calendar.html">Schedule</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="workshops.html">Workshops</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="papers.html">Papers</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="about.html">Help</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="slp">
+      <iframe id="frame" width="100%" src="www.google.com">
+      </iframe>
+    </div>
+    <script type="text/javascript">
+      function getUrlParameter(name) {
+      name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+      };
+      
+      
+      $( document ).ready(function() {
+      console.log("run");
+      var win_height;
+      var frm_height;
+      var oFrame = $("#frame");
+      console.log(oFrame);
+      // Get page height Firefox/IE
+      if(window.innerHeight) win_height = window.innerHeight;
+      else if(document.body.clientHeight) win_height = document.body.clientHeight;
+      
+      // Dtermine new height
+      frm_height = win_height - oFrame.offset().top - 15; // replace 15 accordingly
+      
+      // Set iframe height
+      console.log(frm_height)
+      oFrame.attr("height", frm_height + "px");
+      console.log("https://iclr.rocket.chat/" + getUrlParameter("room"));
+      
+      oFrame.attr("src", "https://iclr.rocket.chat/" + getUrlParameter("room"));
+      });
+    </script>
+  </body>
+</html>

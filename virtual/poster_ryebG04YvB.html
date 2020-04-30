@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+  
+  <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="static/css/main.css">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js"
+    integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="static/js/typeahead.bundle.js"></script>
+  <link rel="stylesheet" href="static/css/typeahead.css">
+  <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/lazy_load.css">
+  <script src="static/js/lazy_load.js"></script>
+  <title> ICLR: Adversarially robust transfer learning </title>
+</head>
+  <meta name="citation_title" content="Adversarially robust transfer learning" />
+  
+  <meta name="citation_author" content="Ali Shafahi" />
+  
+  <meta name="citation_author" content="Parsa Saadatpanah" />
+  
+  <meta name="citation_author" content="Chen Zhu" />
+  
+  <meta name="citation_author" content="Amin Ghiasi" />
+  
+  <meta name="citation_author" content="Christoph Studer" />
+  
+  <meta name="citation_author" content="David Jacobs" />
+  
+  <meta name="citation_author" content="Tom Goldstein" />
+  
+  <meta name="citation_publication_date" content="2020/04"/>
+  <meta name="citation_conference_title" content="Eighth International Conference on Learning Representations" />
+  <meta name="citation_abstract" content="Transfer learning, in which a network is trained on one task and re-purposed on another, is often used to produce neural network classifiers when data is scarce or full-scale training is too costly.  When the goal is to produce a model that is not only accurate but also adversarially robust, data scarcity and computational limitations become even more cumbersome.
+We consider robust transfer learning, in which we transfer not only performance but also robustness from a source model to a target domain.  We start by observing that robust networks contain robust feature extractors. By training classifiers on top of these feature extractors, we produce new models that inherit the robustness of their parent networks. We then consider the case of &#34;fine tuning&#34; a network by re-training end-to-end in the target domain. When using lifelong learning strategies, this process preserves the robustness of the source network while achieving high accuracy. By using such strategies, it is possible to produce accurate and robust models with little data, and without the cost of adversarial training. Additionally, we can improve the generalization of adversarially trained models, while maintaining their robustness." />
+  <meta name="citation_pdf_url" content="http://www.openreview.net/pdf?id=ryebG04YvB" />
+  
+  <meta name="citation_keywords" content="adversarial" />
+  
+  <meta name="citation_keywords" content="fine tuning" />
+  
+  <meta name="citation_keywords" content="generalization" />
+  
+  <meta name="citation_keywords" content="lifelong learning" />
+  
+  <meta name="citation_keywords" content="robustness" />
+  
+  <meta name="citation_keywords" content="transfer learning" />
+  
+  <body >
+    <!-- NAV -->
+    
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Exo" rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css?family=Cuprum" rel='stylesheet'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+  integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.28/moment-timezone-with-data.min.js"
+  integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww="
+  crossorigin="anonymous"></script>
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto " id="main-nav" >
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+    <img class="logo" style='visibility: ' src="static/images/ICLR-logo.png"  width="180px" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-right flex-grow-1" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="index.html">Home</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="calendar.html">Schedule</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="workshops.html">Workshops</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="papers.html">Papers</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="about.html">Help</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container">
+      <!-- Title -->
+      <div class="pp-card m-3" style="">
+        <div class="card-header">
+          <h2 class="card-title main-title text-center" style="">
+            Adversarially robust transfer learning
+          </h2>
+          <h3 class="card-subtitle mb-2 text-muted text-center">
+            
+            <a href="papers.html?filter=authors&search=Ali Shafahi" class="text-muted">Ali Shafahi</a>,
+            
+            <a href="papers.html?filter=authors&search=Parsa Saadatpanah" class="text-muted">Parsa Saadatpanah</a>,
+            
+            <a href="papers.html?filter=authors&search=Chen Zhu" class="text-muted">Chen Zhu</a>,
+            
+            <a href="papers.html?filter=authors&search=Amin Ghiasi" class="text-muted">Amin Ghiasi</a>,
+            
+            <a href="papers.html?filter=authors&search=Christoph Studer" class="text-muted">Christoph Studer</a>,
+            
+            <a href="papers.html?filter=authors&search=David Jacobs" class="text-muted">David Jacobs</a>,
+            
+            <a href="papers.html?filter=authors&search=Tom Goldstein" class="text-muted">Tom Goldstein</a>
+            
+          </h3>
+          <p class="card-text text-center"><span class="">Keywords:</span>
+            
+            <a href="papers.html?filter=keywords&search=adversarial" class="text-secondary text-decoration-none">adversarial</a>,
+            
+            <a href="papers.html?filter=keywords&search=fine tuning" class="text-secondary text-decoration-none">fine tuning</a>,
+            
+            <a href="papers.html?filter=keywords&search=generalization" class="text-secondary text-decoration-none">generalization</a>,
+            
+            <a href="papers.html?filter=keywords&search=lifelong learning" class="text-secondary text-decoration-none">lifelong learning</a>,
+            
+            <a href="papers.html?filter=keywords&search=robustness" class="text-secondary text-decoration-none">robustness</a>,
+            
+            <a href="papers.html?filter=keywords&search=transfer learning" class="text-secondary text-decoration-none">transfer learning</a>
+            
+          </p>
+          <div class="text-center p-3">
+            <a class="card-link" data-toggle="collapse" role="button" href="#details">
+            Abstract
+            </a>
+            <a class="card-link"  target="_blank" href="http://www.openreview.net/pdf?id=ryebG04YvB">
+            Paper
+            </a>
+            
+            <a class="card-link"  target="_blank"  href="http://www.openreview.net/forum?id=ryebG04YvB">
+            Reviews
+            </a>
+            <!--  -->
+            <!-- <a href="38925750" target="_blank"  class="card-link"> -->
+            <!--   Slides -->
+            <!-- </a> -->
+            <!--  -->
+            <!-- </div> -->
+            <!-- <div class="text-center "> -->
+            <!-- <a href="chat.html?room=channel/poster_644" target="_blank"  class="card-link"> -->
+            <!-- Chat -->
+            <!-- </a> -->
+          </div>
+          <div class=" text-center text-muted text-monospace ">
+            
+          </div>
+        </div>
+      </div>
+      <div id="details" class="pp-card m-3 collapse">
+        <div class="card-body">
+          <p class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Transfer learning, in which a network is trained on one task and re-purposed on another, is often used to produce neural network classifiers when data is scarce or full-scale training is too costly.  When the goal is to produce a model that is not only accurate but also adversarially robust, data scarcity and computational limitations become even more cumbersome.
+We consider robust transfer learning, in which we transfer not only performance but also robustness from a source model to a target domain.  We start by observing that robust networks contain robust feature extractors. By training classifiers on top of these feature extractors, we produce new models that inherit the robustness of their parent networks. We then consider the case of &#34;fine tuning&#34; a network by re-training end-to-end in the target domain. When using lifelong learning strategies, this process preserves the robustness of the source network while achieving high accuracy. By using such strategies, it is possible to produce accurate and robust models with little data, and without the cost of adversarial training. Additionally, we can improve the generalization of adversarially trained models, while maintaining their robustness.
+          </div>
+          </p>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <!-- SlidesLive -->
+    <div class="container" style="background-color:white; padding: 0px;">
+      <div class="row m-2">
+        <div class="col-md-12 col-xs-12 my-auto p-2" >
+
+          <div id="presentation-embed-38925750" class="slp my-auto"></div>
+          <script src='https://slideslive.com/embed_presentation.js'></script>
+          <script>
+            embed = new SlidesLiveEmbed('presentation-embed-38925750', {
+            presentationId: '38925750',
+            autoPlay: false, // change to true to autoplay the embedded presentation
+            verticalEnabled: true,
+            allowHiddenControlsWhenPaused: true,
+            hideTitle: true
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recs -->
+    <p></p>
+    <div  class="container" style="padding-bottom: 30px; padding-top:30px">
+      <center>
+        <h2> Similar Papers </h2>
+      </center>
+    </div>
+    <p></p>
+    <div  class="container" >
+      <div class="row">
+        
+        <div class="col-md-4 col-xs-6">
+          <div class="pp-card" >
+            <div class="pp-card-header" class="text-muted">
+              <a href="poster_Hke0V1rKPS.html" class="text-muted">
+                <h5 class="card-title" align="center">Jacobian Adversarially Regularized Networks for Robustness</h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Alvin Chan,
+                
+                Yi Tay,
+                
+                Yew Soon Ong,
+                
+                Jie Fu,
+                
+              </h6>
+              <center><img class="cards_img" src="https://iclr.github.io/iclr-images/Hke0V1rKPS.png" width="80%"/></center>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-xs-6">
+          <div class="pp-card" >
+            <div class="pp-card-header" class="text-muted">
+              <a href="poster_H1lZJpVFvr.html" class="text-muted">
+                <h5 class="card-title" align="center">Robust Local Features for Improving the Generalization of Adversarial Training</h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Chuanbiao Song,
+                
+                Kun He,
+                
+                Jiadong Lin,
+                
+                Liwei Wang,
+                
+                John E. Hopcroft,
+                
+              </h6>
+              <center><img class="cards_img" src="https://iclr.github.io/iclr-images/H1lZJpVFvr.png" width="80%"/></center>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-xs-6">
+          <div class="pp-card" >
+            <div class="pp-card-header" class="text-muted">
+              <a href="poster_BJx040EFvH.html" class="text-muted">
+                <h5 class="card-title" align="center">Fast is better than free: Revisiting adversarial training</h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Eric Wong,
+                
+                Leslie Rice,
+                
+                J. Zico Kolter,
+                
+              </h6>
+              <center><img class="cards_img" src="https://iclr.github.io/iclr-images/BJx040EFvH.png" width="80%"/></center>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <script type="text/javascript">
+  $(document).ready(function () {
+  
+  if (location.hash !== '') {
+  $('a[href="' + location.hash + '"]').tab('show');
+  }
+  
+  $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+  var hash = $(e.target).attr("href");
+  if (hash.substr(0,1) == "#") {
+  var position = $(window).scrollTop();
+  location.replace("#" + hash.substr(1));
+  $(window).scrollTop(position);
+  }
+  });
+  
+  });
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163955028-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  gtag('config', 'UA-163955028-1');
+</script>
+<footer class="footer bg-light p-4">
+  <div class="container">
+    <p class="float-right"><a href="#">Back to Top</a></p>
+    <p class="text-center">© 2020 International Conference on Learning Representations</p>
+  </div>
+</footer>
+  </body>
+  <script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+</html>

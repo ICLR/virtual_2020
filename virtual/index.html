@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="static/css/main.css">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js"
+    integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="static/js/typeahead.bundle.js"></script>
+  <link rel="stylesheet" href="static/css/typeahead.css">
+  <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/lazy_load.css">
+  <script src="static/js/lazy_load.js"></script>
+  <title> ICLR 2020 </title>
+</head>
+  <style>
+    .back {
+    background: url('static/images/mount2.jpg') no-repeat center;
+    background-size: cover;
+    }
+    .back h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    }
+    dd {
+    display: block;
+    margin-left: 1em;
+    }
+  </style>
+  <body>
+    <!-- NAV -->
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Exo" rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css?family=Cuprum" rel='stylesheet'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+  integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.28/moment-timezone-with-data.min.js"
+  integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww="
+  crossorigin="anonymous"></script>
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto " id="main-nav" >
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+    <img class="logo" style='visibility: ' src="static/images/ICLR-logo.png"  width="180px" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-right flex-grow-1" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item active">
+          
+          <a class="nav-link" href="index.html">Home</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="calendar.html">Schedule</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="workshops.html">Workshops</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="papers.html">Papers</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="about.html">Help</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="  " >
+    <div class="jumbotron jumbotron-fluid back" style="padding-bottom:20px">
+      <div class="row mx-auto text-center" >
+        <!-- <div class="mx-auto text-center text-white" > -->
+        <center class="mx-auto">
+          <img src="static/images/ICLR-logo-white.png"  width="90%"/>
+        </center>
+        <!-- </div> -->
+      </div>
+      <div class=" row header p-6 m-5">
+        <div class="p-1 mx-auto text-center text-white col-md-9 col-sm-12" >
+          <h2>
+            EIGHTH <br />
+            INTERNATIONAL<br />
+            CONFERENCE ON<br />
+            LEARNING<br />
+            REPRESENTATIONS
+          </h2>
+          <h2 class="p-5" >
+            Public Archive
+          </h2>
+        </div>
+      </div>
+      <p style="float:right; font-size:12px;" class="text-white header " >Simien Mountains, Ethiopia <a href="https://www.flickr.com/photos/52926167@N00/3962440126">Hulivili</a> </p>
+    </div>
+    <div class="container " >
+      <!-- Getting Started -->
+      <div class="getting_started">
+        <div class=" my-4"></div>
+        <div class="row p-4 border-top"></div>
+
+        <div class="row p-4 ">
+          <div class="col-12 bd-content ">
+            <h2 class="text-center"> Getting Started </h2>
+          </div>
+        </div>
+        <div class="row p-4">
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <p>Welcome to ICLR2020! The conference comprises the following elements:</p>
+            <dl>
+              <dt>Keynote talks</dt>
+              <dd>Invited talks are pre-recorded and will be released each day. Each talk has a live Q&A session so we can interact in real-time with the speakers.</dd>
+              <dt>Papers</dt>
+              <dd>5 minute talks take the place of posters for all <a class="text-muted" href="papers.html">papers</a> and 15 minutes for longer talks. All are pre-recorded and are also released each day.</dd>
+              <dt>Poster Sessions</dt>
+              <dd>You interact with posters by joining a video meeting with the authors. These occur at timezones across the world and several times per day.</dd>
+              <dt>Socials</dt>
+              <dd>You can also meet new people and other participants by using the virtual rooms and <a class="text-muted" href="socials.html">socials</a> that are organised throughout the week.</dd>
+              <dt>Schedule</dt>
+              <dd>You can find the times for all the live sessions using the <a class="text-muted" href="calendar.html">Schedule</a>, where you can choose your timezone and find live sessions that work for you.</dd>
+              <dt> Help</dt>
+              <dd>If you have questions about planning your time or navigating, look under <a class="text-muted" href="about.html">Help</a> for answers to frequently asked questions and technical support.</dd>
+              <dt>Site</dt>
+              <dd>If you are interested in the conference site,
+                check out our <a class="text-muted" href="https://medium.com/@iclr_conf/countdown-to-iclr2020-3cfacd6373ee">blog post</a> and <a class="text-muted" href="https://twitter.com/srush_nlp/status/1253786329575538691">overview</a>.
+
+              </dd>
+              <dt> Social Media</dt>
+              <dd> Share papers,  workshops, and demos by using the hashtag  <span style="font-weight: bold; font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;">#ICLR2020</span></dd>
+
+            </dl>
+          </div>
+          <div class="col-md-1"></div>
+          <div id="presentation-embed" class="col-md-5 col-sm-12 slp embed-responsive embed-responsive-16by9">
+
+          </div>
+          <script src='https://slideslive.com/embed_presentation.js'></script>
+          <script>
+            embed = new SlidesLiveEmbed('presentation-embed', {
+            presentationId: '38926792',
+            autoPlay: false, // change to true to autoplay the embedded presentation
+            verticalEnabled: true,
+            verticalWhenWidthLte: 2000,
+            allowHiddenControlsWhenPaused: true,
+            hideTitle: true
+            });
+          </script>
+
+        </div>
+      </div>
+      <!-- Sponsor -->
+      <div class="sponsors">
+        <div class="border-top my-3"></div>
+        <div class="row p-4">
+        </div>
+        <div class="row p-4" id="organizers">
+          <div class="col-12 bd-content ">
+            <h2 class="text-center"> Sponsors </h2>
+          </div>
+        </div>
+        <!-- <center> -->
+        <!-- <img src="static/images/sponsors.png" width="100%" /> -->
+        <!-- </center> -->
+        
+        <div class="row p-3">
+          <div class="col-12 bd-content ">
+            <h3 class="">
+            Diamond </h2>
+          </div>
+        </div>
+        <div class="row justify-content-start">
+          
+          
+          <div class="col-md-4 col-xs-12 p-2" style="display: flex;flex-flow:wrap; margin-left:0; box-sizing: border-box; border:none;">
+            <div class="card "style="display:block; overflow:hidden; width:95%; border:none;">
+              <div class="card-header d-flex flex-wrap justify-content-center align-items-center" style="height: 250px; background-color:white; border:none;">
+                <a  target="_blank" href="#"><img src="https://iclr.cc/static/admin/img/sponsor_logos/DeepMind-nips-2019.png" style="width:;" class="sponsorLogo" alt="DeepMind" /></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 col-xs-12 p-2" style="display: flex;flex-flow:wrap; margin-left:0; box-sizing: border-box; border:none;">
+            <div class="card "style="display:block; overflow:hidden; width:95%; border:none;">
+              <div class="card-header d-flex flex-wrap justify-content-center align-items-center" style="height: 250px; background-color:white; border:none;">
+                <a  target="_blank" href="#"><img src="static/images/Facebook.jpg" style="width:;" class="sponsorLogo" alt="Facebook" /></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 col-xs-12 p-2" style="display: flex;flex-flow:wrap; margin-left:0; box-sizing: border-box; border:none;">
+            <div class="card "style="display:block; overflow:hidden; width:95%; border:none;">
+              <div class="card-header d-flex flex-wrap justify-content-center align-items-center" style="height: 250px; background-color:white; border:none;">
+                <a  target="_blank" href="#"><img src="https://iclr.cc/static/admin/img/sponsor_logos/google-iclr-2020.png" style="width:;" class="sponsorLogo" alt="Google" /></a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+        <div class="row p-3">
+          <div class="col-12 bd-content ">
+            <h3 class="">
+            Gold </h2>
+          </div>
+        </div>
+        <div class="row justify-content-start">
+          
+          
+          <div class="col-md-3 col-xs-12 p-2" style="display: flex;flex-flow:wrap; margin-left:0; box-sizing: border-box; border:none;">
+            <div class="card "style="display:block; overflow:hidden; width:95%; border:none;">
+              <div class="card-header d-flex flex-wrap justify-content-center align-items-center" style="height: 150px; background-color:white; border:none;">
+                <a  target="_blank" href="#"><img src="static/amscience.png" style="width:250px;" class="sponsorLogo" alt="Amazon" /></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-xs-12 p-2" style="display: flex;flex-flow:wrap; margin-left:0; box-sizing: border-box; border:none;">
+            <div class="card "style="display:block; overflow:hidden; width:95%; border:none;">
+              <div class="card-header d-flex flex-wrap justify-content-center align-items-center" style="height: 150px; background-color:white; border:none;">
+                <a  target="_blank" href="#"><img src="https://iclr.cc/static/admin/img/sponsor_logos/ibm-nips-2019.png" style="width:200px;" class="sponsorLogo" alt="IBM Research" /></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-xs-12 p-2" style="display: flex;flex-flow:wrap; margin-left:0; box-sizing: border-box; border:none;">
+            <div class="card "style="display:block; overflow:hidden; width:95%; border:none;">
+              <div class="card-header d-flex flex-wrap justify-content-center align-items-center" style="height: 150px; background-color:white; border:none;">
+                <a  target="_blank" href="#"><img src="https://iclr.cc/static/admin/img/sponsor_logos/jane-street-nips-2018.png" style="width:200px;" class="sponsorLogo" alt="Jane Street" /></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-xs-12 p-2" style="display: flex;flex-flow:wrap; margin-left:0; box-sizing: border-box; border:none;">
+            <div class="card "style="display:block; overflow:hidden; width:95%; border:none;">
+              <div class="card-header d-flex flex-wrap justify-content-center align-items-center" style="height: 150px; background-color:white; border:none;">
+                <a  target="_blank" href="#"><img src="https://iclr.cc/static/admin/img/sponsor_logos/openai-iclr-2019.png" style="width:100%;" class="sponsorLogo" alt="OpenAI" /></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-xs-12 p-2" style="display: flex;flex-flow:wrap; margin-left:0; box-sizing: border-box; border:none;">
+            <div class="card "style="display:block; overflow:hidden; width:95%; border:none;">
+              <div class="card-header d-flex flex-wrap justify-content-center align-items-center" style="height: 150px; background-color:white; border:none;">
+                <a  target="_blank" href="#"><img src="https://iclr.cc/static/admin/img/sponsor_logos/salesforce-2017.png" style="width:150px;" class="sponsorLogo" alt="Salesforce" /></a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+        <div class="row p-3">
+          <div class="col-12 bd-content ">
+            <h3 class="">
+            Silver </h2>
+          </div>
+        </div>
+        <div class="row justify-content-start">
+          
+          
+          <div class="col-md-3 col-xs-12 p-2" style="display: flex;flex-flow:wrap; margin-left:0; box-sizing: border-box; border:none;">
+            <div class="card "style="display:block; overflow:hidden; width:95%; border:none;">
+              <div class="card-header d-flex flex-wrap justify-content-center align-items-center" style="height: 150px; background-color:white; border:none;">
+                <a  target="_blank" href="#"><img src="https://iclr.cc/static/admin/img/sponsor_logos/apple-nips-2019.png" style="width:150px;" class="sponsorLogo" alt="Apple" /></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-xs-12 p-2" style="display: flex;flex-flow:wrap; margin-left:0; box-sizing: border-box; border:none;">
+            <div class="card "style="display:block; overflow:hidden; width:95%; border:none;">
+              <div class="card-header d-flex flex-wrap justify-content-center align-items-center" style="height: 150px; background-color:white; border:none;">
+                <a  target="_blank" href="#"><img src="https://iclr.cc/static/admin/img/sponsor_logos/ByteDance-nips-2019.png" style="width:100%;" class="sponsorLogo" alt="ByteDance" /></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-xs-12 p-2" style="display: flex;flex-flow:wrap; margin-left:0; box-sizing: border-box; border:none;">
+            <div class="card "style="display:block; overflow:hidden; width:95%; border:none;">
+              <div class="card-header d-flex flex-wrap justify-content-center align-items-center" style="height: 150px; background-color:white; border:none;">
+                <a  target="_blank" href="#"><img src="https://iclr.cc/static/admin/img/sponsor_logos/microsoft-nips-2018.png" style="width:100%;" class="sponsorLogo" alt="Microsoft" /></a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+        <div class="row p-3">
+          <div class="col-12 bd-content ">
+            <h3 class="">
+            Bronze and Start-Up </h2>
+          </div>
+        </div>
+        <div class="row justify-content-start">
+          
+          
+          <div class="col-md-3 col-xs-12 p-2" style="display: flex;flex-flow:wrap; margin-left:0; box-sizing: border-box; border:none;">
+            <div class="card "style="display:block; overflow:hidden; width:95%; border:none;">
+              <div class="card-header d-flex flex-wrap justify-content-center align-items-center" style="height: 150px; background-color:white; border:none;">
+                <a  target="_blank" href="#"><img src="https://iclr.cc/static/admin/img/sponsor_logos/de_shaw-iclr-2019.png" style="width:100%;" class="sponsorLogo" alt="The D. E. Shaw Group" /></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-xs-12 p-2" style="display: flex;flex-flow:wrap; margin-left:0; box-sizing: border-box; border:none;">
+            <div class="card "style="display:block; overflow:hidden; width:95%; border:none;">
+              <div class="card-header d-flex flex-wrap justify-content-center align-items-center" style="height: 150px; background-color:white; border:none;">
+                <a  target="_blank" href="#"><img src="https://iclr.cc/static/admin/img/sponsor_logos/lambda-nips-2017.png" style="width:100px;" class="sponsorLogo" alt="Lambda" /></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-xs-12 p-2" style="display: flex;flex-flow:wrap; margin-left:0; box-sizing: border-box; border:none;">
+            <div class="card "style="display:block; overflow:hidden; width:95%; border:none;">
+              <div class="card-header d-flex flex-wrap justify-content-center align-items-center" style="height: 150px; background-color:white; border:none;">
+                <a  target="_blank" href="#"><img src="https://iclr.cc/static/admin/img/sponsor_logos/two_sigma.png" style="width:100%;" class="sponsorLogo" alt="Two Sigma" /></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-xs-12 p-2" style="display: flex;flex-flow:wrap; margin-left:0; box-sizing: border-box; border:none;">
+            <div class="card "style="display:block; overflow:hidden; width:95%; border:none;">
+              <div class="card-header d-flex flex-wrap justify-content-center align-items-center" style="height: 150px; background-color:white; border:none;">
+                <a  target="_blank" href="#"><img src="https://iclr.cc/static/admin/img/sponsor_logos/element-ai-2017.png" style="width:100%;" class="sponsorLogo" alt="Element AI" /></a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+      <!-- Organizers -->
+      <div class="organizers">
+        <div class="row p-4">
+        </div>
+        <div class="border-top my-3"></div>
+        <div class="row p-4" id="organizers">
+          <div class="col-12 bd-content ">
+            <h2 class="text-center"> Organizers </h2>
+          </div>
+        </div>
+        <div class="row p-4">
+        </div>
+        <div class="row">
+          
+          <div class="col-md-4 col-xs-6">
+            <div class="pp-card" >
+              <div class="pp-card-header" class="text-muted">
+                <h5 class="card-title" align="center">Alexander Rush</h5>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    General Chair, Website
+                  </h6>
+                </div>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    Cornell Tech, Hugging Face / <a class="text-muted" href="http://twitter.com/srush_nlp">@srush_nlp</a>
+                  </h6>
+                </div>
+                <center>
+                  <img src="https://avatars0.githubusercontent.com/u/35882?s=400&amp;u=8f382f638b31f13a4754656140256241121c5916&amp;v=4" class="rounded" style="height:150px" />
+                </center>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 col-xs-6">
+            <div class="pp-card" >
+              <div class="pp-card-header" class="text-muted">
+                <h5 class="card-title" align="center">Shakir Mohamed</h5>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    Senior Program Chair
+                  </h6>
+                </div>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    DeepMind / <a class="text-muted" href="http://twitter.com/shakir_za">@shakir_za</a>
+                  </h6>
+                </div>
+                <center>
+                  <img src="https://pbs.twimg.com/media/ESmWySUWsAEQZU4.jpg" class="rounded" style="height:150px" />
+                </center>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 col-xs-6">
+            <div class="pp-card" >
+              <div class="pp-card-header" class="text-muted">
+                <h5 class="card-title" align="center">Martha White</h5>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    Program Chair
+                  </h6>
+                </div>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    University of Alberta
+                  </h6>
+                </div>
+                <center>
+                  <img src="https://i.ytimg.com/vi/BcFBqqthN9Q/maxresdefault.jpg" class="rounded" style="height:150px" />
+                </center>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 col-xs-6">
+            <div class="pp-card" >
+              <div class="pp-card-header" class="text-muted">
+                <h5 class="card-title" align="center">Kyunghyun Cho</h5>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    Program Chair
+                  </h6>
+                </div>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    NYU &amp; FAIR / <a class="text-muted" href="http://twitter.com/kchonyc">@kchonyc</a>
+                  </h6>
+                </div>
+                <center>
+                  <img src="https://cds.nyu.edu/wp-content/uploads/2015/09/iu-6.jpeg" class="rounded" style="height:150px" />
+                </center>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 col-xs-6">
+            <div class="pp-card" >
+              <div class="pp-card-header" class="text-muted">
+                <h5 class="card-title" align="center">Dawn Song</h5>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    Program Chair
+                  </h6>
+                </div>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    UC Berkeley / <a class="text-muted" href="http://twitter.com/dawnsongtweets">@dawnsongtweets</a>
+                  </h6>
+                </div>
+                <center>
+                  <img src="https://miro.medium.com/max/3150/1*frhodW_09eI_xldsIY8Veg.jpeg" class="rounded" style="height:150px" />
+                </center>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 col-xs-6">
+            <div class="pp-card" >
+              <div class="pp-card-header" class="text-muted">
+                <h5 class="card-title" align="center">Gabriel Synnaeve</h5>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    Workshop Chair
+                  </h6>
+                </div>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    Facebook AI Research / <a class="text-muted" href="http://twitter.com/syhw">@syhw</a>
+                  </h6>
+                </div>
+                <center>
+                  <img src="https://pbs.twimg.com/profile_images/559705507355561985/9aR-b1Gq.jpeg" class="rounded" style="height:150px" />
+                </center>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 col-xs-6">
+            <div class="pp-card" >
+              <div class="pp-card-header" class="text-muted">
+                <h5 class="card-title" align="center">Asja Fischer,</h5>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    Workshop Chair
+                  </h6>
+                </div>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    Ruhr University Bochum
+                  </h6>
+                </div>
+                <center>
+                  <img src="https://www.ruhr-uni-bochum.de/imperia/md/images/mathematik/folder/Machine_Learning/fischer.png" class="rounded" style="height:150px" />
+                </center>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 col-xs-6">
+            <div class="pp-card" >
+              <div class="pp-card-header" class="text-muted">
+                <h5 class="card-title" align="center">Animashree Anandkumar</h5>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    D&amp;I Chair
+                  </h6>
+                </div>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    Cal Tech, NVidia / <a class="text-muted" href="http://twitter.com/AnimaAnandkumar">@AnimaAnandkumar</a>
+                  </h6>
+                </div>
+                <center>
+                  <img src="https://blogs.nvidia.com/wp-content/uploads/2019/12/Anima-Anandkumar-200x200.jpg" class="rounded" style="height:150px" />
+                </center>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 col-xs-6">
+            <div class="pp-card" >
+              <div class="pp-card-header" class="text-muted">
+                <h5 class="card-title" align="center">Kevin Swersky</h5>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    D&amp;I Chair
+                  </h6>
+                </div>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    Google AI / <a class="text-muted" href="http://twitter.com/kswersky">@kswersky</a>
+                  </h6>
+                </div>
+                <center>
+                  <img src="https://www.utoronto.ca/sites/default/files/kevin-swersky.jpg" class="rounded" style="height:150px" />
+                </center>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 col-xs-6">
+            <div class="pp-card" >
+              <div class="pp-card-header" class="text-muted">
+                <h5 class="card-title" align="center">Timnit Gebru</h5>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    Logistics Chair
+                  </h6>
+                </div>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    Google Brain / <a class="text-muted" href="http://twitter.com/timnitgebru">@timnitgebru</a>
+                  </h6>
+                </div>
+                <center>
+                  <img src="https://s24071.pcdn.co/wp-content/uploads/2018/12/rac-07-18-timnit-gebru.jpg" class="rounded" style="height:150px" />
+                </center>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 col-xs-6">
+            <div class="pp-card" >
+              <div class="pp-card-header" class="text-muted">
+                <h5 class="card-title" align="center">Esube Bekele</h5>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    Logistics Chair
+                  </h6>
+                </div>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    In-Q-Tel
+                  </h6>
+                </div>
+                <center>
+                  <img src="https://media.neurips.cc/Conferences/ICLR2020/EB.jpg" class="rounded" style="height:150px" />
+                </center>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 col-xs-6">
+            <div class="pp-card" >
+              <div class="pp-card-header" class="text-muted">
+                <h5 class="card-title" align="center">Adam White</h5>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    Social Chair
+                  </h6>
+                </div>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    DeepMind, University of Alberta
+                  </h6>
+                </div>
+                <center>
+                  <img src="https://iclr.github.io/iclr-images/people/adam.jpg" class="rounded" style="height:150px" />
+                </center>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 col-xs-6">
+            <div class="pp-card" >
+              <div class="pp-card-header" class="text-muted">
+                <h5 class="card-title" align="center">Hendrik Strobelt</h5>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    Web Chair
+                  </h6>
+                </div>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    MIT-IBM Watson AI Lab / <a class="text-muted" href="http://twitter.com/hen_str">@hen_str</a>
+                  </h6>
+                </div>
+                <center>
+                  <img src="https://pbs.twimg.com/profile_images/885611190126292992/LF4CTcu_.jpg" class="rounded" style="height:150px" />
+                </center>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 col-xs-6">
+            <div class="pp-card" >
+              <div class="pp-card-header" class="text-muted">
+                <h5 class="card-title" align="center">Andrea Brown</h5>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    Organizing Team
+                  </h6>
+                </div>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    AICons
+                  </h6>
+                </div>
+                <center>
+                  <img src="https://media.neurips.cc/Conferences/ICLR2020/ABrown.png" class="rounded" style="height:150px" />
+                </center>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 col-xs-6">
+            <div class="pp-card" >
+              <div class="pp-card-header" class="text-muted">
+                <h5 class="card-title" align="center">Lee Campbell</h5>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    Organizing Team
+                  </h6>
+                </div>
+                <div>
+                  <h6 class="card-subtitle text-muted m-1" align="center">
+                    Salk
+                  </h6>
+                </div>
+                <center>
+                  <img src="https://media.neurips.cc/Conferences/ICLR2020/LCampbell.png" class="rounded" style="height:150px" />
+                </center>
+              </div>
+            </div>
+          </div>
+          
+          <p class="text-muted">
+          The ICLR organizers would like to acknowledge the following volunteers and contributors who provided valuable additional service to the conference:
+          
+          Monika Mleckova,
+          
+          Vojta Ciml,
+          
+          Jake Tae,
+          
+          Junaid Rahim,
+          
+          Yasser Souri,
+          
+          Soumya Chatterjee,
+          
+          Akshita Gupta,
+          
+          John Wieting,
+          
+          Graham Neubig,
+          
+          Hal Daume,
+          
+          Marija Stanojevic,
+          
+          Tejaswi Kasarla,
+          
+          Olga Isupova,
+          
+          Darren Nelson
+          
+          </p>
+        </div>
+
+      </div>
+    </div>
+    <script type="text/javascript">
+  $(document).ready(function () {
+  
+  if (location.hash !== '') {
+  $('a[href="' + location.hash + '"]').tab('show');
+  }
+  
+  $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+  var hash = $(e.target).attr("href");
+  if (hash.substr(0,1) == "#") {
+  var position = $(window).scrollTop();
+  location.replace("#" + hash.substr(1));
+  $(window).scrollTop(position);
+  }
+  });
+  
+  });
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163955028-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  gtag('config', 'UA-163955028-1');
+</script>
+<footer class="footer bg-light p-4">
+  <div class="container">
+    <p class="float-right"><a href="#">Back to Top</a></p>
+    <p class="text-center">© 2020 International Conference on Learning Representations</p>
+  </div>
+</footer>
+  </body>
+</html>

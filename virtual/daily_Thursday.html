@@ -1,0 +1,1449 @@
+<!doctype html>
+<html lang="en">
+  
+  <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="static/css/main.css">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js"
+    integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="static/js/typeahead.bundle.js"></script>
+  <link rel="stylesheet" href="static/css/typeahead.css">
+  <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/lazy_load.css">
+  <script src="static/js/lazy_load.js"></script>
+  <title> ICLR </title>
+</head>
+  <body>
+    <!-- NAV -->
+    
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Exo" rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css?family=Cuprum" rel='stylesheet'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+  integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.28/moment-timezone-with-data.min.js"
+  integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww="
+  crossorigin="anonymous"></script>
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto " id="main-nav" >
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+    <img class="logo" style='visibility: ' src="static/images/ICLR-logo.png"  width="180px" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-right flex-grow-1" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="index.html">Home</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="calendar.html">Schedule</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="workshops.html">Workshops</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="papers.html">Papers</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="about.html">Help</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+    <<<<<<< HEAD
+    <div class="container">
+      <div class="row p-4">
+        <div class="col-12 bd-content ">
+          <h2 class="text-center">  Thursday Schedule </h2>
+        </div>
+      </div>
+      <div class="row p-3">
+        <h3>Invited Speakers</h3>
+      </div>
+      
+      <div class="row">
+        <div class="col-12 m-3 ">
+          <div class="card">
+            <div class="card-header">
+              <div class="row">
+                <div class="col-2">
+                  <img src="static/images/lecun+bengio.png" width="100%">
+                </div>
+                <div class="col-10 ">
+                  <div class="m-3">
+                    <span class="card-title h3" >
+                    Profs. Yann LeCun and Yoshua Bengio
+                    </span> 
+                    <span>
+                    Facebook AI + NYU / MILA
+                    </span>
+                  </div>
+                  <div class="m-3">
+                    <h3>
+                      Reflections from the Turing Award Winners
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-12 m-3 ">
+          <div class="card">
+            <div class="card-header">
+              <div class="row">
+                <div class="col-2">
+                  <img src="static/images/jordan.jpg" width="100%">
+                </div>
+                <div class="col-10 ">
+                  <div class="m-3">
+                    <span class="card-title h3" >
+                    Prof. Michael I. Jordan
+                    </span> 
+                    <span>
+                    University of California, Berkeley
+                    </span>
+                  </div>
+                  <div class="m-3">
+                    <h3>
+                      The Decision-Making Side of Machine Learning: Dynamical, Statistical and Economic Perspectives
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <<<<<<< HEAD
+      
+      <div class="row p-3">
+        <h3>Oral Session: Natural Language</h3>
+      </div>
+      <div class ="row my-auto mx-auto">
+        <div id="carouselExample1" class="carousel slide" data-interval="false">
+          <div class="carousel-inner cards" role="listbox">
+            
+            
+            <div class="carousel-item  active">
+              
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_BygzbyHFvB.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> FreeLB: Enhanced Adversarial Training for Natural Language Understanding </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Chen Zhu,
+                      
+                      Yu Cheng,
+                      
+                      Zhe Gan,
+                      
+                      Siqi Sun,
+                      
+                      Tom Goldstein,
+                      
+                      Jingjing Liu,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/BygzbyHFvB.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_BJxSI1SKDH.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> A Latent Morphology Model for Open-Vocabulary Neural Machine Translation </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Duygu Ataman,
+                      
+                      Wilker Aziz,
+                      
+                      Alexandra Birch,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/BJxSI1SKDH.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_Byl8hhNYPS.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Neural Machine Translation with Universal Visual Representation </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Zhuosheng Zhang,
+                      
+                      Kehai Chen,
+                      
+                      Rui Wang,
+                      
+                      Masao Utiyama,
+                      
+                      Eiichiro Sumita,
+                      
+                      Zuchao Li,
+                      
+                      Hai Zhao,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/Byl8hhNYPS.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+            
+            
+            <div class="carousel-item ">
+              
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_Hke0K1HKwr.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Sequential Latent Knowledge Selection for Knowledge-Grounded Dialogue </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Byeongchang Kim,
+                      
+                      Jaewoo Ahn,
+                      
+                      Gunhee Kim,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/Hke0K1HKwr.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_H1eA7AEtvS.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> ALBERT: A Lite BERT for Self-supervised Learning of Language Representations </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Zhenzhong Lan,
+                      
+                      Mingda Chen,
+                      
+                      Sebastian Goodman,
+                      
+                      Kevin Gimpel,
+                      
+                      Piyush Sharma,
+                      
+                      Radu Soricut,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/H1eA7AEtvS.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_BkxRRkSKwr.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Towards Hierarchical Importance Attribution: Explaining Compositional Semantics for Neural Sequence Models </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Xisen Jin,
+                      
+                      Zhongyu Wei,
+                      
+                      Junyi Du,
+                      
+                      Xiangyang Xue,
+                      
+                      Xiang Ren,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/BkxRRkSKwr.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+            
+            
+            <div class="carousel-item ">
+              
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_HkxQRTNYPH.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Mirror-Generative Neural Machine Translation </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Zaixiang Zheng,
+                      
+                      Hao Zhou,
+                      
+                      Shujian Huang,
+                      
+                      Lei Li,
+                      
+                      Xin-Yu Dai,
+                      
+                      Jiajun Chen,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/HkxQRTNYPH.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_S1efxTVYDr.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Data-dependent Gaussian Prior Objective for Language Generation </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Zuchao Li,
+                      
+                      Rui Wang,
+                      
+                      Kehai Chen,
+                      
+                      Masso Utiyama,
+                      
+                      Eiichiro Sumita,
+                      
+                      Zhuosheng Zhang,
+                      
+                      Hai Zhao,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/S1efxTVYDr.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+            
+          </div>
+          <a class="carousel-control-prev" href="#carouselExample1" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExample1" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="row p-3">
+        <h3>Oral Session: Network Architectures</h3>
+      </div>
+      <div class ="row my-auto mx-auto">
+        <div id="carouselExample2" class="carousel slide" data-interval="false">
+          <div class="carousel-inner cards" role="listbox">
+            
+            
+            <div class="carousel-item  active">
+              
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_BJlS634tPr.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> PC-DARTS: Partial Channel Connections for Memory-Efficient Architecture Search </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Yuhui Xu,
+                      
+                      Lingxi Xie,
+                      
+                      Xiaopeng Zhang,
+                      
+                      Xin Chen,
+                      
+                      Guo-Jun Qi,
+                      
+                      Qi Tian,
+                      
+                      Hongkai Xiong,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/BJlS634tPr.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_HJeTo2VFwH.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> A Signal Propagation Perspective for Pruning Neural Networks at Initialization </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Namhoon Lee,
+                      
+                      Thalaiyasingam Ajanthan,
+                      
+                      Stephen Gould,
+                      
+                      Philip H. S. Torr,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/HJeTo2VFwH.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_rkeu30EtvS.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Network Deconvolution </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Chengxi Ye,
+                      
+                      Matthew Evanusa,
+                      
+                      Hua He,
+                      
+                      Anton Mitrokhin,
+                      
+                      Tom Goldstein,
+                      
+                      James A. Yorke,
+                      
+                      Cornelia Fermuller,
+                      
+                      Yiannis Aloimonos,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/rkeu30EtvS.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+            
+            
+            <div class="carousel-item ">
+              
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_H1gNOeHKPS.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Neural Arithmetic Units </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Andreas Madsen,
+                      
+                      Alexander Rosenberg Johansen,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/H1gNOeHKPS.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_rJehVyrKwH.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> And the Bit Goes Down: Revisiting the Quantization of Neural Networks </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Pierre Stock,
+                      
+                      Armand Joulin,
+                      
+                      Rémi Gribonval,
+                      
+                      Benjamin Graham,
+                      
+                      Hervé Jégou,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/rJehVyrKwH.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_HJxyZkBKDr.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> NAS-Bench-201: Extending the Scope of Reproducible Neural Architecture Search </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Xuanyi Dong,
+                      
+                      Yi Yang,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/HJxyZkBKDr.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+            
+            
+            <div class="carousel-item ">
+              
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_H1gDNyrKDS.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Understanding and Robustifying Differentiable Architecture Search </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Arber Zela,
+                      
+                      Thomas Elsken,
+                      
+                      Tonmoy Saikia,
+                      
+                      Yassine Marrakchi,
+                      
+                      Thomas Brox,
+                      
+                      Frank Hutter,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/H1gDNyrKDS.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_S1gSj0NKvB.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Comparing Rewinding and Fine-tuning in Neural Network Pruning </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Alex Renda,
+                      
+                      Jonathan Frankle,
+                      
+                      Michael Carbin,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/S1gSj0NKvB.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+            
+          </div>
+          <a class="carousel-control-prev" href="#carouselExample2" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExample2" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="row p-3">
+        <h3>Oral Session: Graphs and Representations</h3>
+      </div>
+      <div class ="row my-auto mx-auto">
+        <div id="carouselExample3" class="carousel slide" data-interval="false">
+          <div class="carousel-inner cards" role="listbox">
+            
+            
+            <div class="carousel-item  active">
+              
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_ByxxgCEYDS.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Inductive Matrix Completion Based on Graph Neural Networks </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Muhan Zhang,
+                      
+                      Yixin Chen,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/ByxxgCEYDS.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_S1e2agrFvS.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Geom-GCN: Geometric Graph Convolutional Networks </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Hongbin Pei,
+                      
+                      Bingzhe Wei,
+                      
+                      Kevin Chen-Chuan Chang,
+                      
+                      Yu Lei,
+                      
+                      Bo Yang,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/S1e2agrFvS.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_B1e3OlStPB.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> DeepSphere: a graph-based spherical CNN </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Michaël Defferrard,
+                      
+                      Martino Milani,
+                      
+                      Frédérick Gusset,
+                      
+                      Nathanaël Perraudin,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/B1e3OlStPB.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+            
+            
+            <div class="carousel-item ">
+              
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_r1lZ7AEKvB.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> The Logical Expressiveness of Graph Neural Networks </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Pablo Barceló,
+                      
+                      Egor V. Kostylev,
+                      
+                      Mikael Monet,
+                      
+                      Jorge Pérez,
+                      
+                      Juan Reutter,
+                      
+                      Juan Pablo Silva,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/r1lZ7AEKvB.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_r1lfF2NYvH.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> InfoGraph: Unsupervised and Semi-supervised Graph-Level Representation Learning via Mutual Information Maximization </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Fan-Yun Sun,
+                      
+                      Jordan Hoffman,
+                      
+                      Vikas Verma,
+                      
+                      Jian Tang,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/r1lfF2NYvH.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_HJlWWJSFDH.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Strategies for Pre-training Graph Neural Networks </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Weihua Hu,
+                      
+                      Bowen Liu,
+                      
+                      Joseph Gomes,
+                      
+                      Marinka Zitnik,
+                      
+                      Percy Liang,
+                      
+                      Vijay Pande,
+                      
+                      Jure Leskovec,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/HJlWWJSFDH.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+            
+            
+            <div class="carousel-item ">
+              
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_r1lGO0EKDH.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> GraphZoom: A Multi-level Spectral Approach for Accurate and Scalable Graph Embedding </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Chenhui Deng,
+                      
+                      Zhiqiang Zhao,
+                      
+                      Yongyu Wang,
+                      
+                      Zhiru Zhang,
+                      
+                      Zhuo Feng,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/r1lGO0EKDH.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_H1gax6VtDB.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Contrastive Learning of Structured World Models </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Thomas Kipf,
+                      
+                      Elise van der Pol,
+                      
+                      Max Welling,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/H1gax6VtDB.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+            
+          </div>
+          <a class="carousel-control-prev" href="#carouselExample3" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExample3" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="row p-3">
+        <h3>Oral Session: Continual Learning and Few Shot Learning</h3>
+      </div>
+      <div class ="row my-auto mx-auto">
+        <div id="carouselExample4" class="carousel slide" data-interval="false">
+          <div class="carousel-inner cards" role="listbox">
+            
+            
+            <div class="carousel-item  active">
+              
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_SJl5Np4tPr.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Cross-Domain Few-Shot Classification via Learned Feature-Wise Transformation </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Hung-Yu Tseng,
+                      
+                      Hsin-Ying Lee,
+                      
+                      Jia-Bin Huang,
+                      
+                      Ming-Hsuan Yang,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/SJl5Np4tPr.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_BJge3TNKwH.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Sliced Cramer Synaptic Consolidation for Preserving Deeply Learned Representations </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Soheil Kolouri,
+                      
+                      Nicholas A. Ketz,
+                      
+                      Andrea Soltoggio,
+                      
+                      Praveen K. Pilly,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/BJge3TNKwH.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_SJgwNerKvB.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Continual learning with hypernetworks </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Johannes von Oswald,
+                      
+                      Christian Henning,
+                      
+                      João Sacramento,
+                      
+                      Benjamin F. Grewe,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/SJgwNerKvB.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+            
+            
+            <div class="carousel-item ">
+              
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_BJeAHkrYDS.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Fast Task Inference with Variational Intrinsic Successor Features </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Steven Hansen,
+                      
+                      Will Dabney,
+                      
+                      Andre Barreto,
+                      
+                      David Warde-Farley,
+                      
+                      Tom Van de Wiele,
+                      
+                      Volodymyr Mnih,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/BJeAHkrYDS.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_HJgLZR4KvH.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Dynamics-Aware Unsupervised Skill Discovery </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Archit Sharma,
+                      
+                      Shixiang Gu,
+                      
+                      Sergey Levine,
+                      
+                      Vikash Kumar,
+                      
+                      Karol Hausman,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/HJgLZR4KvH.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_SJgwNerKvB.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Continual learning with hypernetworks </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Johannes von Oswald,
+                      
+                      Christian Henning,
+                      
+                      João Sacramento,
+                      
+                      Benjamin F. Grewe,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/SJgwNerKvB.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+            
+          </div>
+          <a class="carousel-control-prev" href="#carouselExample4" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExample4" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="row p-3">
+        <h3>Oral Session: Optimisation II</h3>
+      </div>
+      <div class ="row my-auto mx-auto">
+        <div id="carouselExample5" class="carousel slide" data-interval="false">
+          <div class="carousel-inner cards" role="listbox">
+            
+            
+            <div class="carousel-item  active">
+              
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_Hklz71rYvS.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Kernelized Wasserstein Natural Gradient </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      M Arbel,
+                      
+                      A Gretton,
+                      
+                      W Li,
+                      
+                      G Montufar,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/Hklz71rYvS.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_r1g87C4KwB.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> The Break-Even Point on Optimization Trajectories of Deep Neural Networks </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Stanislaw Jastrzebski,
+                      
+                      Maciej Szymczak,
+                      
+                      Stanislav Fort,
+                      
+                      Devansh Arpit,
+                      
+                      Jacek Tabor,
+                      
+                      Kyunghyun Cho,
+                      
+                      Krzysztof Geras,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/r1g87C4KwB.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_BkevoJSYPB.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Differentiation of Blackbox Combinatorial Solvers </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Marin Vlastelica Pogančić,
+                      
+                      Anselm Paulus,
+                      
+                      Vit Musil,
+                      
+                      Georg Martius,
+                      
+                      Michal Rolinek,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/BkevoJSYPB.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+            
+            
+            <div class="carousel-item ">
+              
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_SJxstlHFPH.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Differentiable Reasoning over a Virtual Knowledge Base </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Bhuwan Dhingra,
+                      
+                      Manzil Zaheer,
+                      
+                      Vidhisha Balachandran,
+                      
+                      Graham Neubig,
+                      
+                      Ruslan Salakhutdinov,
+                      
+                      William W. Cohen,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/SJxstlHFPH.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_H1lma24tPB.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Principled Weight Initialization for Hypernetworks </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Oscar Chang,
+                      
+                      Lampros Flokas,
+                      
+                      Hod Lipson,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/H1lma24tPB.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+            
+          </div>
+          <a class="carousel-control-prev" href="#carouselExample5" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExample5" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="row p-3">
+        <h3>Oral Session: Fairness, Interpretabiity and Deployment</h3>
+      </div>
+      <div class ="row my-auto mx-auto">
+        <div id="carouselExample6" class="carousel slide" data-interval="false">
+          <div class="carousel-inner cards" role="listbox">
+            
+            
+            <div class="carousel-item  active">
+              
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_B1gdkxHFDH.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Training individually fair ML models with sensitive subspace robustness </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Mikhail Yurochkin,
+                      
+                      Amanda Bower,
+                      
+                      Yuekai Sun,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/B1gdkxHFDH.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_Hkekl0NFPr.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Conditional Learning of Fair Representations </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Han Zhao,
+                      
+                      Amanda Coston,
+                      
+                      Tameem Adel,
+                      
+                      Geoffrey J. Gordon,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/Hkekl0NFPr.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_H1xFWgrFPS.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Explanation  by Progressive  Exaggeration </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Sumedha Singla,
+                      
+                      Brian Pollack,
+                      
+                      Junxiang Chen,
+                      
+                      Kayhan Batmanghelich,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/H1xFWgrFPS.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+            
+            
+            <div class="carousel-item ">
+              
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_BJlrF24twB.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> BackPACK: Packing more into Backprop </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Felix Dangel,
+                      
+                      Frederik Kunstner,
+                      
+                      Philipp Hennig,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/BJlrF24twB.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+              <div class="col-md-4 col-xs-6  fluid">
+                <div class="pp-card">
+                  <div class="pp-card-header">
+                    <a href="poster_BkluqlSFDS.html"
+                      class="text-muted">
+                      <h5 class="card-title" align="center"> Federated Learning with Matched Averaging </h5>
+                    </a>
+                    <h6 class="card-subtitle text-muted" align="center">
+                      
+                      Hongyi Wang,
+                      
+                      Mikhail Yurochkin,
+                      
+                      Yuekai Sun,
+                      
+                      Dimitris Papailiopoulos,
+                      
+                      Yasaman Khazaeni,
+                      
+                    </h6>
+                    <center><img class="cards_img" src="https://iclr.github.io/iclr-images/BkluqlSFDS.png" width="80%"/></center>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+            
+          </div>
+          <a class="carousel-control-prev" href="#carouselExample6" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExample6" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="row p-3">
+        <h3> Poster Sessions</h3>
+      </div>
+      
+      <div class="row">
+        <div class="col-12">
+          <h3 class="text-center">
+            <a class ="text-muted" href="papers.html?filter=session&search=Thurs+Session+1 - (05:00-07:00 GMT)">Session 1 - (05:00-07:00 GMT)</a>
+          </h3>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-12">
+          <h3 class="text-center">
+            <a class ="text-muted" href="papers.html?filter=session&search=Thurs+Session+2 - (08:00-10:00 GMT)">Session 2 - (08:00-10:00 GMT)</a>
+          </h3>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-12">
+          <h3 class="text-center">
+            <a class ="text-muted" href="papers.html?filter=session&search=Thurs+Session+3 - (12:00-14:00 GMT)">Session 3 - (12:00-14:00 GMT)</a>
+          </h3>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-12">
+          <h3 class="text-center">
+            <a class ="text-muted" href="papers.html?filter=session&search=Thurs+Session+4 - (17:00-19:00 GMT)">Session 4 - (17:00-19:00 GMT)</a>
+          </h3>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-12">
+          <h3 class="text-center">
+            <a class ="text-muted" href="papers.html?filter=session&search=Thurs+Session+5 - (20:00-22:00 GMT)">Session 5 - (20:00-22:00 GMT)</a>
+          </h3>
+        </div>
+      </div>
+      
+    </div>
+    <!--   <script > -->
+    <!--     $('.carousel .carousel-item').each(function(){ -->
+    <!--     var next = $(this).next(); -->
+    <!--     if (!next.length) { -->
+    <!--     next = $(this).siblings(':first'); -->
+    <!--     } -->
+    <!--     next.children(':first-child').clone().appendTo($(this)); -->
+    <!--     for (var i=0;i<2;i++) { -->
+    <!--         next=next.next(); -->
+    <!--         if (!next.length) { -->
+    <!--          next = $(this).siblings(':first'); -->
+    <!--        } -->
+    <!--         next.children(':first-child').clone().appendTo($(this)); -->
+    <!--       } -->
+    <!-- }); -->
+    <!--     </script> -->
+  </body>
+</html>

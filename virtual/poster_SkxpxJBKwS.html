@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+  
+  <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="static/css/main.css">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js"
+    integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="static/js/typeahead.bundle.js"></script>
+  <link rel="stylesheet" href="static/css/typeahead.css">
+  <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/lazy_load.css">
+  <script src="static/js/lazy_load.js"></script>
+  <title> ICLR: Emergent Tool Use From Multi-Agent Autocurricula </title>
+</head>
+  <meta name="citation_title" content="Emergent Tool Use From Multi-Agent Autocurricula" />
+  
+  <meta name="citation_author" content="Bowen Baker" />
+  
+  <meta name="citation_author" content="Ingmar Kanitscheider" />
+  
+  <meta name="citation_author" content="Todor Markov" />
+  
+  <meta name="citation_author" content="Yi Wu" />
+  
+  <meta name="citation_author" content="Glenn Powell" />
+  
+  <meta name="citation_author" content="Bob McGrew" />
+  
+  <meta name="citation_author" content="Igor Mordatch" />
+  
+  <meta name="citation_publication_date" content="2020/04"/>
+  <meta name="citation_conference_title" content="Eighth International Conference on Learning Representations" />
+  <meta name="citation_abstract" content="Through multi-agent competition, the simple objective of hide-and-seek, and standard reinforcement learning algorithms at scale, we find that agents create a self-supervised autocurriculum inducing multiple distinct rounds of emergent strategy, many of which require sophisticated tool use and coordination. We find clear evidence of six emergent phases in agent strategy in our environment, each of which creates a new pressure for the opposing team to adapt; for instance, agents learn to build multi-object shelters using moveable boxes which in turn leads to agents discovering that they can overcome obstacles using ramps. We further provide evidence that multi-agent competition may scale better with increasing environment complexity and leads to behavior that centers around far more human-relevant skills than other self-supervised reinforcement learning methods such as intrinsic motivation. Finally, we propose transfer and fine-tuning as a way to quantitatively evaluate targeted capabilities, and we compare hide-and-seek agents to both intrinsic motivation and random initialization baselines in a suite of domain-specific intelligence tests." />
+  <meta name="citation_pdf_url" content="http://www.openreview.net/pdf?id=SkxpxJBKwS" />
+  
+  <meta name="citation_keywords" content="fine tuning" />
+  
+  <meta name="citation_keywords" content="intrinsic motivation" />
+  
+  <meta name="citation_keywords" content="reinforcement learning" />
+  
+  <body >
+    <!-- NAV -->
+    
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Exo" rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css?family=Cuprum" rel='stylesheet'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+  integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.28/moment-timezone-with-data.min.js"
+  integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww="
+  crossorigin="anonymous"></script>
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto " id="main-nav" >
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+    <img class="logo" style='visibility: ' src="static/images/ICLR-logo.png"  width="180px" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-right flex-grow-1" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="index.html">Home</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="calendar.html">Schedule</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="workshops.html">Workshops</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="papers.html">Papers</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="about.html">Help</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container">
+      <!-- Title -->
+      <div class="pp-card m-3" style="">
+        <div class="card-header">
+          <h2 class="card-title main-title text-center" style="">
+            Emergent Tool Use From Multi-Agent Autocurricula
+          </h2>
+          <h3 class="card-subtitle mb-2 text-muted text-center">
+            
+            <a href="papers.html?filter=authors&search=Bowen Baker" class="text-muted">Bowen Baker</a>,
+            
+            <a href="papers.html?filter=authors&search=Ingmar Kanitscheider" class="text-muted">Ingmar Kanitscheider</a>,
+            
+            <a href="papers.html?filter=authors&search=Todor Markov" class="text-muted">Todor Markov</a>,
+            
+            <a href="papers.html?filter=authors&search=Yi Wu" class="text-muted">Yi Wu</a>,
+            
+            <a href="papers.html?filter=authors&search=Glenn Powell" class="text-muted">Glenn Powell</a>,
+            
+            <a href="papers.html?filter=authors&search=Bob McGrew" class="text-muted">Bob McGrew</a>,
+            
+            <a href="papers.html?filter=authors&search=Igor Mordatch" class="text-muted">Igor Mordatch</a>
+            
+          </h3>
+          <p class="card-text text-center"><span class="">Keywords:</span>
+            
+            <a href="papers.html?filter=keywords&search=fine tuning" class="text-secondary text-decoration-none">fine tuning</a>,
+            
+            <a href="papers.html?filter=keywords&search=intrinsic motivation" class="text-secondary text-decoration-none">intrinsic motivation</a>,
+            
+            <a href="papers.html?filter=keywords&search=reinforcement learning" class="text-secondary text-decoration-none">reinforcement learning</a>
+            
+          </p>
+          <div class="text-center p-3">
+            <a class="card-link" data-toggle="collapse" role="button" href="#details">
+            Abstract
+            </a>
+            <a class="card-link"  target="_blank" href="http://www.openreview.net/pdf?id=SkxpxJBKwS">
+            Paper
+            </a>
+            
+            <a href="https://github.com/openai/multi-agent-emergence-environments" target="_blank"  class="card-link">
+            Code
+            </a>
+            
+            <a class="card-link"  target="_blank"  href="http://www.openreview.net/forum?id=SkxpxJBKwS">
+            Reviews
+            </a>
+            <!--  -->
+            <!-- <a href="38925895" target="_blank"  class="card-link"> -->
+            <!--   Slides -->
+            <!-- </a> -->
+            <!--  -->
+            <!-- </div> -->
+            <!-- <div class="text-center "> -->
+            <!-- <a href="chat.html?room=channel/poster_472" target="_blank"  class="card-link"> -->
+            <!-- Chat -->
+            <!-- </a> -->
+          </div>
+          <div class=" text-center text-muted text-monospace ">
+            
+            <div> Monday: Multiagent Systems 
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div id="details" class="pp-card m-3 collapse">
+        <div class="card-body">
+          <p class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Through multi-agent competition, the simple objective of hide-and-seek, and standard reinforcement learning algorithms at scale, we find that agents create a self-supervised autocurriculum inducing multiple distinct rounds of emergent strategy, many of which require sophisticated tool use and coordination. We find clear evidence of six emergent phases in agent strategy in our environment, each of which creates a new pressure for the opposing team to adapt; for instance, agents learn to build multi-object shelters using moveable boxes which in turn leads to agents discovering that they can overcome obstacles using ramps. We further provide evidence that multi-agent competition may scale better with increasing environment complexity and leads to behavior that centers around far more human-relevant skills than other self-supervised reinforcement learning methods such as intrinsic motivation. Finally, we propose transfer and fine-tuning as a way to quantitatively evaluate targeted capabilities, and we compare hide-and-seek agents to both intrinsic motivation and random initialization baselines in a suite of domain-specific intelligence tests.
+          </div>
+          </p>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <!-- SlidesLive -->
+    <div class="container" style="background-color:white; padding: 0px;">
+      <div class="row m-2">
+        <div class="col-md-12 col-xs-12 my-auto p-2" >
+
+          <div id="presentation-embed-38925895" class="slp my-auto"></div>
+          <script src='https://slideslive.com/embed_presentation.js'></script>
+          <script>
+            embed = new SlidesLiveEmbed('presentation-embed-38925895', {
+            presentationId: '38925895',
+            autoPlay: false, // change to true to autoplay the embedded presentation
+            verticalEnabled: true,
+            allowHiddenControlsWhenPaused: true,
+            hideTitle: true
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recs -->
+    <p></p>
+    <div  class="container" style="padding-bottom: 30px; padding-top:30px">
+      <center>
+        <h2> Similar Papers </h2>
+      </center>
+    </div>
+    <p></p>
+    <div  class="container" >
+      <div class="row">
+        
+        <div class="col-md-4 col-xs-6">
+          <div class="pp-card" >
+            <div class="pp-card-header" class="text-muted">
+              <a href="poster_S1lEX04tPr.html" class="text-muted">
+                <h5 class="card-title" align="center">CM3: Cooperative Multi-goal Multi-stage Multi-agent Reinforcement Learning</h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Jiachen Yang,
+                
+                Alireza Nakhaei,
+                
+                David Isele,
+                
+                Kikuo Fujimura,
+                
+                Hongyuan Zha,
+                
+              </h6>
+              <center><img class="cards_img" src="https://iclr.github.io/iclr-images/S1lEX04tPr.png" width="80%"/></center>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-xs-6">
+          <div class="pp-card" >
+            <div class="pp-card-header" class="text-muted">
+              <a href="poster_rJxGLlBtwH.html" class="text-muted">
+                <h5 class="card-title" align="center">On the interaction between supervision and self-play in emergent communication</h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Ryan Lowe,
+                
+                Abhinav Gupta,
+                
+                Jakob Foerster,
+                
+                Douwe Kiela,
+                
+                Joelle Pineau,
+                
+              </h6>
+              <center><img class="cards_img" src="https://iclr.github.io/iclr-images/rJxGLlBtwH.png" width="80%"/></center>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-xs-6">
+          <div class="pp-card" >
+            <div class="pp-card-header" class="text-muted">
+              <a href="poster_SJxbHkrKDH.html" class="text-muted">
+                <h5 class="card-title" align="center">Evolutionary Population Curriculum for Scaling Multi-Agent Reinforcement Learning</h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Qian Long,
+                
+                Zihan Zhou,
+                
+                Abhinav Gupta,
+                
+                Fei Fang,
+                
+                Yi Wu†,
+                
+                Xiaolong Wang†,
+                
+              </h6>
+              <center><img class="cards_img" src="https://iclr.github.io/iclr-images/SJxbHkrKDH.png" width="80%"/></center>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <script type="text/javascript">
+  $(document).ready(function () {
+  
+  if (location.hash !== '') {
+  $('a[href="' + location.hash + '"]').tab('show');
+  }
+  
+  $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+  var hash = $(e.target).attr("href");
+  if (hash.substr(0,1) == "#") {
+  var position = $(window).scrollTop();
+  location.replace("#" + hash.substr(1));
+  $(window).scrollTop(position);
+  }
+  });
+  
+  });
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163955028-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  gtag('config', 'UA-163955028-1');
+</script>
+<footer class="footer bg-light p-4">
+  <div class="container">
+    <p class="float-right"><a href="#">Back to Top</a></p>
+    <p class="text-center">© 2020 International Conference on Learning Representations</p>
+  </div>
+</footer>
+  </body>
+  <script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+</html>

@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+  
+  <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="static/css/main.css">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js"
+    integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="static/js/typeahead.bundle.js"></script>
+  <link rel="stylesheet" href="static/css/typeahead.css">
+  <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/lazy_load.css">
+  <script src="static/js/lazy_load.js"></script>
+  <title> ICLR: Accelerating SGD with momentum for over-parameterized learning </title>
+</head>
+  <meta name="citation_title" content="Accelerating SGD with momentum for over-parameterized learning" />
+  
+  <meta name="citation_author" content="Chaoyue Liu" />
+  
+  <meta name="citation_author" content="Mikhail Belkin" />
+  
+  <meta name="citation_publication_date" content="2020/04"/>
+  <meta name="citation_conference_title" content="Eighth International Conference on Learning Representations" />
+  <meta name="citation_abstract" content="
+Nesterov SGD is widely used for training modern neural networks and other machine learning models. Yet, its advantages over SGD have not been theoretically clarified. Indeed, as we show  in this paper, both theoretically and empirically, Nesterov SGD with any parameter selection does not in general provide acceleration over ordinary SGD. Furthermore, Nesterov SGD may diverge for step sizes that ensure convergence of ordinary SGD. This is in contrast to the classical results in the deterministic setting, where the same step size ensures accelerated convergence of the Nesterov&#39;s method over optimal gradient descent.
+
+To address the non-acceleration issue, we  introduce a compensation term to Nesterov SGD. The resulting  algorithm, which we call MaSS, converges  for same step sizes as SGD. We prove that MaSS obtains an accelerated convergence rates over SGD for any mini-batch size in the linear setting.  For full batch, the convergence rate of MaSS matches the well-known accelerated rate of the Nesterov&#39;s method. 
+
+We also analyze the  practically important question of the dependence of the convergence rate and  optimal hyper-parameters on the mini-batch size, demonstrating three distinct regimes: linear scaling, diminishing returns and saturation.
+
+Experimental evaluation of MaSS for several standard  architectures of deep networks, including ResNet and convolutional networks, shows improved performance over SGD, Nesterov SGD  and Adam. " />
+  <meta name="citation_pdf_url" content="http://www.openreview.net/pdf?id=r1gixp4FPH" />
+  
+  <meta name="citation_keywords" content="acceleration" />
+  
+  <meta name="citation_keywords" content="cnn" />
+  
+  <meta name="citation_keywords" content="gradient descent" />
+  
+  <meta name="citation_keywords" content="momentum" />
+  
+  <body >
+    <!-- NAV -->
+    
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Exo" rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css?family=Cuprum" rel='stylesheet'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+  integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.28/moment-timezone-with-data.min.js"
+  integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww="
+  crossorigin="anonymous"></script>
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto " id="main-nav" >
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+    <img class="logo" style='visibility: ' src="static/images/ICLR-logo.png"  width="180px" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-right flex-grow-1" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="index.html">Home</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="calendar.html">Schedule</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="workshops.html">Workshops</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="papers.html">Papers</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="about.html">Help</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container">
+      <!-- Title -->
+      <div class="pp-card m-3" style="">
+        <div class="card-header">
+          <h2 class="card-title main-title text-center" style="">
+            Accelerating SGD with momentum for over-parameterized learning
+          </h2>
+          <h3 class="card-subtitle mb-2 text-muted text-center">
+            
+            <a href="papers.html?filter=authors&search=Chaoyue Liu" class="text-muted">Chaoyue Liu</a>,
+            
+            <a href="papers.html?filter=authors&search=Mikhail Belkin" class="text-muted">Mikhail Belkin</a>
+            
+          </h3>
+          <p class="card-text text-center"><span class="">Keywords:</span>
+            
+            <a href="papers.html?filter=keywords&search=acceleration" class="text-secondary text-decoration-none">acceleration</a>,
+            
+            <a href="papers.html?filter=keywords&search=cnn" class="text-secondary text-decoration-none">cnn</a>,
+            
+            <a href="papers.html?filter=keywords&search=gradient descent" class="text-secondary text-decoration-none">gradient descent</a>,
+            
+            <a href="papers.html?filter=keywords&search=momentum" class="text-secondary text-decoration-none">momentum</a>
+            
+          </p>
+          <div class="text-center p-3">
+            <a class="card-link" data-toggle="collapse" role="button" href="#details">
+            Abstract
+            </a>
+            <a class="card-link"  target="_blank" href="http://www.openreview.net/pdf?id=r1gixp4FPH">
+            Paper
+            </a>
+            
+            <a href="https://github.com/ts66395/MaSS" target="_blank"  class="card-link">
+            Code
+            </a>
+            
+            <a class="card-link"  target="_blank"  href="http://www.openreview.net/forum?id=r1gixp4FPH">
+            Reviews
+            </a>
+            <!--  -->
+            <!-- <a href="38925589" target="_blank"  class="card-link"> -->
+            <!--   Slides -->
+            <!-- </a> -->
+            <!--  -->
+            <!-- </div> -->
+            <!-- <div class="text-center "> -->
+            <!-- <a href="chat.html?room=channel/poster_524" target="_blank"  class="card-link"> -->
+            <!-- Chat -->
+            <!-- </a> -->
+          </div>
+          <div class=" text-center text-muted text-monospace ">
+            
+          </div>
+        </div>
+      </div>
+      <div id="details" class="pp-card m-3 collapse">
+        <div class="card-body">
+          <p class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            
+Nesterov SGD is widely used for training modern neural networks and other machine learning models. Yet, its advantages over SGD have not been theoretically clarified. Indeed, as we show  in this paper, both theoretically and empirically, Nesterov SGD with any parameter selection does not in general provide acceleration over ordinary SGD. Furthermore, Nesterov SGD may diverge for step sizes that ensure convergence of ordinary SGD. This is in contrast to the classical results in the deterministic setting, where the same step size ensures accelerated convergence of the Nesterov&#39;s method over optimal gradient descent.
+
+To address the non-acceleration issue, we  introduce a compensation term to Nesterov SGD. The resulting  algorithm, which we call MaSS, converges  for same step sizes as SGD. We prove that MaSS obtains an accelerated convergence rates over SGD for any mini-batch size in the linear setting.  For full batch, the convergence rate of MaSS matches the well-known accelerated rate of the Nesterov&#39;s method. 
+
+We also analyze the  practically important question of the dependence of the convergence rate and  optimal hyper-parameters on the mini-batch size, demonstrating three distinct regimes: linear scaling, diminishing returns and saturation.
+
+Experimental evaluation of MaSS for several standard  architectures of deep networks, including ResNet and convolutional networks, shows improved performance over SGD, Nesterov SGD  and Adam. 
+          </div>
+          </p>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <!-- SlidesLive -->
+    <div class="container" style="background-color:white; padding: 0px;">
+      <div class="row m-2">
+        <div class="col-md-12 col-xs-12 my-auto p-2" >
+
+          <div id="presentation-embed-38925589" class="slp my-auto"></div>
+          <script src='https://slideslive.com/embed_presentation.js'></script>
+          <script>
+            embed = new SlidesLiveEmbed('presentation-embed-38925589', {
+            presentationId: '38925589',
+            autoPlay: false, // change to true to autoplay the embedded presentation
+            verticalEnabled: true,
+            allowHiddenControlsWhenPaused: true,
+            hideTitle: true
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recs -->
+    <p></p>
+    <div  class="container" style="padding-bottom: 30px; padding-top:30px">
+      <center>
+        <h2> Similar Papers </h2>
+      </center>
+    </div>
+    <p></p>
+    <div  class="container" >
+      <div class="row">
+        
+        <div class="col-md-4 col-xs-6">
+          <div class="pp-card" >
+            <div class="pp-card-header" class="text-muted">
+              <a href="poster_rkeNfp4tPr.html" class="text-muted">
+                <h5 class="card-title" align="center">Escaping Saddle Points Faster with Stochastic Momentum</h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Jun-Kun Wang,
+                
+                Chi-Heng Lin,
+                
+                Jacob Abernethy,
+                
+              </h6>
+              <center><img class="cards_img" src="https://iclr.github.io/iclr-images/rkeNfp4tPr.png" width="80%"/></center>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-xs-6">
+          <div class="pp-card" >
+            <div class="pp-card-header" class="text-muted">
+              <a href="poster_B1eyO1BFPr.html" class="text-muted">
+                <h5 class="card-title" align="center">Don&#39;t Use Large Mini-batches, Use Local SGD</h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Tao Lin,
+                
+                Sebastian U. Stich,
+                
+                Kumar Kshitij Patel,
+                
+                Martin Jaggi,
+                
+              </h6>
+              <center><img class="cards_img" src="https://iclr.github.io/iclr-images/B1eyO1BFPr.png" width="80%"/></center>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-xs-6">
+          <div class="pp-card" >
+            <div class="pp-card-header" class="text-muted">
+              <a href="poster_HJxEhREKDH.html" class="text-muted">
+                <h5 class="card-title" align="center">On the Global Convergence  of Training Deep Linear ResNets</h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Difan Zou,
+                
+                Philip M. Long,
+                
+                Quanquan Gu,
+                
+              </h6>
+              <center><img class="cards_img" src="https://iclr.github.io/iclr-images/HJxEhREKDH.png" width="80%"/></center>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <script type="text/javascript">
+  $(document).ready(function () {
+  
+  if (location.hash !== '') {
+  $('a[href="' + location.hash + '"]').tab('show');
+  }
+  
+  $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+  var hash = $(e.target).attr("href");
+  if (hash.substr(0,1) == "#") {
+  var position = $(window).scrollTop();
+  location.replace("#" + hash.substr(1));
+  $(window).scrollTop(position);
+  }
+  });
+  
+  });
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163955028-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  gtag('config', 'UA-163955028-1');
+</script>
+<footer class="footer bg-light p-4">
+  <div class="container">
+    <p class="float-right"><a href="#">Back to Top</a></p>
+    <p class="text-center">© 2020 International Conference on Learning Representations</p>
+  </div>
+</footer>
+  </body>
+  <script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+</html>

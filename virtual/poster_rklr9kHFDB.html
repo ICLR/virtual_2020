@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+  
+  <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="static/css/main.css">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js"
+    integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="static/js/typeahead.bundle.js"></script>
+  <link rel="stylesheet" href="static/css/typeahead.css">
+  <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/lazy_load.css">
+  <script src="static/js/lazy_load.js"></script>
+  <title> ICLR: Rotation-invariant clustering of neuronal responses in primary visual cortex </title>
+</head>
+  <meta name="citation_title" content="Rotation-invariant clustering of neuronal responses in primary visual cortex" />
+  
+  <meta name="citation_author" content="Ivan Ustyuzhaninov" />
+  
+  <meta name="citation_author" content="Santiago A. Cadena" />
+  
+  <meta name="citation_author" content="Emmanouil Froudarakis" />
+  
+  <meta name="citation_author" content="Paul G. Fahey" />
+  
+  <meta name="citation_author" content="Edgar Y. Walker" />
+  
+  <meta name="citation_author" content="Erick Cobos" />
+  
+  <meta name="citation_author" content="Jacob Reimer" />
+  
+  <meta name="citation_author" content="Fabian H. Sinz" />
+  
+  <meta name="citation_author" content="Andreas S. Tolias" />
+  
+  <meta name="citation_author" content="Matthias Bethge" />
+  
+  <meta name="citation_author" content="Alexander S. Ecker" />
+  
+  <meta name="citation_publication_date" content="2020/04"/>
+  <meta name="citation_conference_title" content="Eighth International Conference on Learning Representations" />
+  <meta name="citation_abstract" content="Similar to a convolutional neural network (CNN), the mammalian retina encodes visual information into several dozen nonlinear feature maps, each formed by one ganglion cell type that tiles the visual space in an approximately shift-equivariant manner. Whether such organization into distinct cell types is maintained at the level of cortical image processing is an open question. Predictive models building upon convolutional features have been shown to provide state-of-the-art performance, and have recently been extended to include rotation equivariance in order to account for the orientation selectivity of V1 neurons. However, generally no direct correspondence between CNN feature maps and groups of individual neurons emerges in these models, thus rendering it an open question whether V1 neurons form distinct functional clusters. Here we build upon the rotation-equivariant representation of a CNN-based V1 model and propose a methodology for clustering the representations of neurons in this model to find functional cell types independent of preferred orientations of the neurons. We apply this method to a dataset of 6000 neurons and visualize the preferred stimuli of the resulting clusters. Our results highlight the range of non-linear computations in mouse V1." />
+  <meta name="citation_pdf_url" content="http://www.openreview.net/pdf?id=rklr9kHFDB" />
+  
+  <meta name="citation_keywords" content="clustering" />
+  
+  <meta name="citation_keywords" content="computational neuroscience" />
+  
+  <meta name="citation_keywords" content="equivariance" />
+  
+  <meta name="citation_keywords" content="visual cortex" />
+  
+  <body >
+    <!-- NAV -->
+    
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Exo" rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css?family=Cuprum" rel='stylesheet'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+  integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.28/moment-timezone-with-data.min.js"
+  integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww="
+  crossorigin="anonymous"></script>
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto " id="main-nav" >
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+    <img class="logo" style='visibility: ' src="static/images/ICLR-logo.png"  width="180px" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-right flex-grow-1" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="index.html">Home</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="calendar.html">Schedule</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="workshops.html">Workshops</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="papers.html">Papers</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="about.html">Help</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container">
+      <!-- Title -->
+      <div class="pp-card m-3" style="">
+        <div class="card-header">
+          <h2 class="card-title main-title text-center" style="">
+            Rotation-invariant clustering of neuronal responses in primary visual cortex
+          </h2>
+          <h3 class="card-subtitle mb-2 text-muted text-center">
+            
+            <a href="papers.html?filter=authors&search=Ivan Ustyuzhaninov" class="text-muted">Ivan Ustyuzhaninov</a>,
+            
+            <a href="papers.html?filter=authors&search=Santiago A. Cadena" class="text-muted">Santiago A. Cadena</a>,
+            
+            <a href="papers.html?filter=authors&search=Emmanouil Froudarakis" class="text-muted">Emmanouil Froudarakis</a>,
+            
+            <a href="papers.html?filter=authors&search=Paul G. Fahey" class="text-muted">Paul G. Fahey</a>,
+            
+            <a href="papers.html?filter=authors&search=Edgar Y. Walker" class="text-muted">Edgar Y. Walker</a>,
+            
+            <a href="papers.html?filter=authors&search=Erick Cobos" class="text-muted">Erick Cobos</a>,
+            
+            <a href="papers.html?filter=authors&search=Jacob Reimer" class="text-muted">Jacob Reimer</a>,
+            
+            <a href="papers.html?filter=authors&search=Fabian H. Sinz" class="text-muted">Fabian H. Sinz</a>,
+            
+            <a href="papers.html?filter=authors&search=Andreas S. Tolias" class="text-muted">Andreas S. Tolias</a>,
+            
+            <a href="papers.html?filter=authors&search=Matthias Bethge" class="text-muted">Matthias Bethge</a>,
+            
+            <a href="papers.html?filter=authors&search=Alexander S. Ecker" class="text-muted">Alexander S. Ecker</a>
+            
+          </h3>
+          <p class="card-text text-center"><span class="">Keywords:</span>
+            
+            <a href="papers.html?filter=keywords&search=clustering" class="text-secondary text-decoration-none">clustering</a>,
+            
+            <a href="papers.html?filter=keywords&search=computational neuroscience" class="text-secondary text-decoration-none">computational neuroscience</a>,
+            
+            <a href="papers.html?filter=keywords&search=equivariance" class="text-secondary text-decoration-none">equivariance</a>,
+            
+            <a href="papers.html?filter=keywords&search=visual cortex" class="text-secondary text-decoration-none">visual cortex</a>
+            
+          </p>
+          <div class="text-center p-3">
+            <a class="card-link" data-toggle="collapse" role="button" href="#details">
+            Abstract
+            </a>
+            <a class="card-link"  target="_blank" href="http://www.openreview.net/pdf?id=rklr9kHFDB">
+            Paper
+            </a>
+            
+            <a class="card-link"  target="_blank"  href="http://www.openreview.net/forum?id=rklr9kHFDB">
+            Reviews
+            </a>
+            <!--  -->
+            <!-- <a href="38925999" target="_blank"  class="card-link"> -->
+            <!--   Slides -->
+            <!-- </a> -->
+            <!--  -->
+            <!-- </div> -->
+            <!-- <div class="text-center "> -->
+            <!-- <a href="chat.html?room=channel/poster_631" target="_blank"  class="card-link"> -->
+            <!-- Chat -->
+            <!-- </a> -->
+          </div>
+          <div class=" text-center text-muted text-monospace ">
+            
+            <div> Tuesday: Biology and ML 
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div id="details" class="pp-card m-3 collapse">
+        <div class="card-body">
+          <p class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Similar to a convolutional neural network (CNN), the mammalian retina encodes visual information into several dozen nonlinear feature maps, each formed by one ganglion cell type that tiles the visual space in an approximately shift-equivariant manner. Whether such organization into distinct cell types is maintained at the level of cortical image processing is an open question. Predictive models building upon convolutional features have been shown to provide state-of-the-art performance, and have recently been extended to include rotation equivariance in order to account for the orientation selectivity of V1 neurons. However, generally no direct correspondence between CNN feature maps and groups of individual neurons emerges in these models, thus rendering it an open question whether V1 neurons form distinct functional clusters. Here we build upon the rotation-equivariant representation of a CNN-based V1 model and propose a methodology for clustering the representations of neurons in this model to find functional cell types independent of preferred orientations of the neurons. We apply this method to a dataset of 6000 neurons and visualize the preferred stimuli of the resulting clusters. Our results highlight the range of non-linear computations in mouse V1.
+          </div>
+          </p>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <!-- SlidesLive -->
+    <div class="container" style="background-color:white; padding: 0px;">
+      <div class="row m-2">
+        <div class="col-md-12 col-xs-12 my-auto p-2" >
+
+          <div id="presentation-embed-38925999" class="slp my-auto"></div>
+          <script src='https://slideslive.com/embed_presentation.js'></script>
+          <script>
+            embed = new SlidesLiveEmbed('presentation-embed-38925999', {
+            presentationId: '38925999',
+            autoPlay: false, // change to true to autoplay the embedded presentation
+            verticalEnabled: true,
+            allowHiddenControlsWhenPaused: true,
+            hideTitle: true
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recs -->
+    <p></p>
+    <div  class="container" style="padding-bottom: 30px; padding-top:30px">
+      <center>
+        <h2> Similar Papers </h2>
+      </center>
+    </div>
+    <p></p>
+    <div  class="container" >
+      <div class="row">
+        
+        <div class="col-md-4 col-xs-6">
+          <div class="pp-card" >
+            <div class="pp-card-header" class="text-muted">
+              <a href="poster_HklSeREtPB.html" class="text-muted">
+                <h5 class="card-title" align="center">Emergence of functional and structural properties of the head direction system by optimization of recurrent neural networks</h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Christopher J. Cueva,
+                
+                Peter Y. Wang,
+                
+                Matthew Chin,
+                
+                Xue-Xin Wei,
+                
+              </h6>
+              <center><img class="cards_img" src="https://iclr.github.io/iclr-images/HklSeREtPB.png" width="80%"/></center>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-xs-6">
+          <div class="pp-card" >
+            <div class="pp-card-header" class="text-muted">
+              <a href="poster_Skey4eBYPS.html" class="text-muted">
+                <h5 class="card-title" align="center">Convolutional Conditional Neural Processes</h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Jonathan Gordon,
+                
+                Wessel P. Bruinsma,
+                
+                Andrew Y. K. Foong,
+                
+                James Requeima,
+                
+                Yann Dubois,
+                
+                Richard E. Turner,
+                
+              </h6>
+              <center><img class="cards_img" src="https://iclr.github.io/iclr-images/Skey4eBYPS.png" width="80%"/></center>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-xs-6">
+          <div class="pp-card" >
+            <div class="pp-card-header" class="text-muted">
+              <a href="poster_H1gB4RVKvB.html" class="text-muted">
+                <h5 class="card-title" align="center">Recurrent neural circuits for contour detection</h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Drew Linsley,
+                
+                Junkyung Kim,
+                
+                Alekh Ashok,
+                
+                Thomas Serre,
+                
+              </h6>
+              <center><img class="cards_img" src="https://iclr.github.io/iclr-images/H1gB4RVKvB.png" width="80%"/></center>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <script type="text/javascript">
+  $(document).ready(function () {
+  
+  if (location.hash !== '') {
+  $('a[href="' + location.hash + '"]').tab('show');
+  }
+  
+  $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+  var hash = $(e.target).attr("href");
+  if (hash.substr(0,1) == "#") {
+  var position = $(window).scrollTop();
+  location.replace("#" + hash.substr(1));
+  $(window).scrollTop(position);
+  }
+  });
+  
+  });
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163955028-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  gtag('config', 'UA-163955028-1');
+</script>
+<footer class="footer bg-light p-4">
+  <div class="container">
+    <p class="float-right"><a href="#">Back to Top</a></p>
+    <p class="text-center">© 2020 International Conference on Learning Representations</p>
+  </div>
+</footer>
+  </body>
+  <script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+</html>

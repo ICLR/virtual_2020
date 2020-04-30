@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+  
+  <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="static/css/main.css">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js"
+    integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="static/js/typeahead.bundle.js"></script>
+  <link rel="stylesheet" href="static/css/typeahead.css">
+  <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/lazy_load.css">
+  <script src="static/js/lazy_load.js"></script>
+  <title> ICLR 2020 - Workshops </title>
+</head>
+  <body>
+    <!-- NAV -->
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Exo" rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css?family=Cuprum" rel='stylesheet'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+  integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.28/moment-timezone-with-data.min.js"
+  integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww="
+  crossorigin="anonymous"></script>
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto " id="main-nav" >
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+    <img class="logo" style='visibility: ' src="static/images/ICLR-logo.png"  width="180px" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-right flex-grow-1" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="index.html">Home</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="calendar.html">Schedule</a>
+          
+        </li>
+        
+        <li class="nav-item active">
+          
+          <a class="nav-link" href="workshops.html">Workshops</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="papers.html">Papers</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="about.html">Help</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container">
+      <div class="row p-4">
+        <div class="col-12 bd-content ">
+          <h2 class="text-center"> Workshops </h2>
+        </div>
+      </div>
+      <div class="cards row">
+        
+        <div class="col-md-6 col-sm-12 p-3"
+          style="box-sizing: border-box;">
+          <div class="card"
+            style="display:block; overflow:hidden; width:100%;">
+            <div class="card-header text-center"
+              style="min-height: 200px; width:100%;">
+              <a class="text-muted" href="workshops_1.html">
+                <h3 class="card-title main-title">
+                  Fundamental Science in the era of AI
+                </h3>
+              </a>
+              <div class="card-subtitle text-muted">
+                Richard Armstrong · Bruce Bassett · Michelle Lochner · Nadeem Oozeer
+              </div>
+              <!-- <div class="m-4"> -->
+              <!--     <img height="100" -->
+              <!--          src="https://iclr.github.io/iclr-images/workshops/FSAI.jpeg"/> -->
+              <!-- </div> -->
+              <div class="m-3 text-left card-subtitle font-italic">
+                How can AI help deal rigorously with the data deluge of 'big science'? How can AI help amplify the social impact of fundamental science?
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-sm-12 p-3"
+          style="box-sizing: border-box;">
+          <div class="card"
+            style="display:block; overflow:hidden; width:100%;">
+            <div class="card-header text-center"
+              style="min-height: 200px; width:100%;">
+              <a class="text-muted" href="workshops_2.html">
+                <h3 class="card-title main-title">
+                  AI for Overcoming Global Disparities in Cancer Care
+                </h3>
+              </a>
+              <div class="card-subtitle text-muted">
+                Thomas Fuchs · Gabriele Campanella · Dig Vijay Kumar Yarlagadda · Christina Virgo · Hassan Muhammad · Johan Lundin · Peter Kingham · Olusegun Isaac Alatise
+              </div>
+              <!-- <div class="m-4"> -->
+              <!--     <img height="100" -->
+              <!--          src="https://iclr.github.io/iclr-images/workshops/ai4cc.png"/> -->
+              <!-- </div> -->
+              <div class="m-3 text-left card-subtitle font-italic">
+                Identify the potential of AI to overcome global disparities in access, diagnosis, and treatment in cancer care.
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-sm-12 p-3"
+          style="box-sizing: border-box;">
+          <div class="card"
+            style="display:block; overflow:hidden; width:100%;">
+            <div class="card-header text-center"
+              style="min-height: 200px; width:100%;">
+              <a class="text-muted" href="workshops_3.html">
+                <h3 class="card-title main-title">
+                  AI for Earth Sciences
+                </h3>
+              </a>
+              <div class="card-subtitle text-muted">
+                Surya Karthik Mukkavilli · Kelly Kochanski · Johanna Hansen · Trooper Sanders · Pierre Gentine · Mary C Hill · Gregory Dudek · Aaron Courville · Vipin Kumar
+              </div>
+              <!-- <div class="m-4"> -->
+              <!--     <img height="100" -->
+              <!--          src="https://iclr.github.io/iclr-images/workshops/"/> -->
+              <!-- </div> -->
+              <div class="m-3 text-left card-subtitle font-italic">
+                Bring cutting edge geoscientific and planetary challenges to the fore for the machine learning and deep learning communities.
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-sm-12 p-3"
+          style="box-sizing: border-box;">
+          <div class="card"
+            style="display:block; overflow:hidden; width:100%;">
+            <div class="card-header text-center"
+              style="min-height: 200px; width:100%;">
+              <a class="text-muted" href="workshops_4.html">
+                <h3 class="card-title main-title">
+                  Bridging AI and Cognitive Science (BAICS)
+                </h3>
+              </a>
+              <div class="card-subtitle text-muted">
+                Aida Nematzadeh · Jessica Hamrick · Kaylee Burns · Joshua B Tenenbaum · Alison Gopnik · Emmanuel Dupoux
+              </div>
+              <!-- <div class="m-4"> -->
+              <!--     <img height="100" -->
+              <!--          src="https://iclr.github.io/iclr-images/workshops/"/> -->
+              <!-- </div> -->
+              <div class="m-3 text-left card-subtitle font-italic">
+                Inspire connections between AI and cognitive science across a broad set of topics.
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-sm-12 p-3"
+          style="box-sizing: border-box;">
+          <div class="card"
+            style="display:block; overflow:hidden; width:100%;">
+            <div class="card-header text-center"
+              style="min-height: 200px; width:100%;">
+              <a class="text-muted" href="workshops_5.html">
+                <h3 class="card-title main-title">
+                  Integration of Deep Neural Models and Differential Equations
+                </h3>
+              </a>
+              <div class="card-subtitle text-muted">
+                Tan M Nguyen · Richard Baraniuk · Animesh Garg · Stanley J Osher · Anima Anandkumar · Bao Wang
+              </div>
+              <!-- <div class="m-4"> -->
+              <!--     <img height="100" -->
+              <!--          src="https://iclr.github.io/iclr-images/workshops/"/> -->
+              <!-- </div> -->
+              <div class="m-3 text-left card-subtitle font-italic">
+                Where theoretical and experimental researchers can come together to join forces towards the goal of integration of deep neural networks and differential equations.
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-sm-12 p-3"
+          style="box-sizing: border-box;">
+          <div class="card"
+            style="display:block; overflow:hidden; width:100%;">
+            <div class="card-header text-center"
+              style="min-height: 200px; width:100%;">
+              <a class="text-muted" href="workshops_6.html">
+                <h3 class="card-title main-title">
+                  Towards Trustworthy ML: Rethinking Security and Privacy for ML
+                </h3>
+              </a>
+              <div class="card-subtitle text-muted">
+                Nicolas Papernot · Carmela Troncoso · Nicholas Carlini · Florian Tramer · Shibani Santurkar
+              </div>
+              <!-- <div class="m-4"> -->
+              <!--     <img height="100" -->
+              <!--          src="https://iclr.github.io/iclr-images/workshops/"/> -->
+              <!-- </div> -->
+              <div class="m-3 text-left card-subtitle font-italic">
+                Bring together experts from a variety of communities (ML, computer security, data privacy, fairness, & ethics) to work on promising ideas and research directions.
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-sm-12 p-3"
+          style="box-sizing: border-box;">
+          <div class="card"
+            style="display:block; overflow:hidden; width:100%;">
+            <div class="card-header text-center"
+              style="min-height: 200px; width:100%;">
+              <a class="text-muted" href="workshops_7.html">
+                <h3 class="card-title main-title">
+                  Tackling Climate Change with ML
+                </h3>
+              </a>
+              <div class="card-subtitle text-muted">
+                Priya Donti · David Rolnick · Lynn Kaack · Sasha Luccioni · Kris Sankaran · Sharon Zhou · Moustapha Cisse · Carla Gomes · Andrew Ng · Yoshua Bengio
+              </div>
+              <!-- <div class="m-4"> -->
+              <!--     <img height="100" -->
+              <!--          src="https://iclr.github.io/iclr-images/workshops/"/> -->
+              <!-- </div> -->
+              <div class="m-3 text-left card-subtitle font-italic">
+                Show that ML can be an invaluable tool both in reducing greenhouse gas emissions and in helping society adapt to the effects of climate change.
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-sm-12 p-3"
+          style="box-sizing: border-box;">
+          <div class="card"
+            style="display:block; overflow:hidden; width:100%;">
+            <div class="card-header text-center"
+              style="min-height: 200px; width:100%;">
+              <a class="text-muted" href="workshops_8.html">
+                <h3 class="card-title main-title">
+                  ML-IRL: Machine Learning in Real Life
+                </h3>
+              </a>
+              <div class="card-subtitle text-muted">
+                Samantha Kleinberg · Rumi Chunara
+              </div>
+              <!-- <div class="m-4"> -->
+              <!--     <img height="100" -->
+              <!--          src="https://iclr.github.io/iclr-images/workshops/"/> -->
+              <!-- </div> -->
+              <div class="m-3 text-left card-subtitle font-italic">
+                Examine how we develop, evaluate, and deploy ML in real life applications, and discover problematic implications.
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-sm-12 p-3"
+          style="box-sizing: border-box;">
+          <div class="card"
+            style="display:block; overflow:hidden; width:100%;">
+            <div class="card-header text-center"
+              style="min-height: 200px; width:100%;">
+              <a class="text-muted" href="workshops_9.html">
+                <h3 class="card-title main-title">
+                  Neural Architecture Search
+                </h3>
+              </a>
+              <div class="card-subtitle text-muted">
+                Frank Hutter · Arber Zela · Aaron Klein · Jan Metzen · Liam Li
+              </div>
+              <!-- <div class="m-4"> -->
+              <!--     <img height="100" -->
+              <!--          src="https://iclr.github.io/iclr-images/workshops/"/> -->
+              <!-- </div> -->
+              <div class="m-3 text-left card-subtitle font-italic">
+                Build a strong, open, inclusive, and welcoming community of colleagues working on neural architecture search.
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-sm-12 p-3"
+          style="box-sizing: border-box;">
+          <div class="card"
+            style="display:block; overflow:hidden; width:100%;">
+            <div class="card-header text-center"
+              style="min-height: 200px; width:100%;">
+              <a class="text-muted" href="workshops_10.html">
+                <h3 class="card-title main-title">
+                  AfricaNLP - Unlocking Local Languages
+                </h3>
+              </a>
+              <div class="card-subtitle text-muted">
+                Kathleen Siminyu · Laura Martinus · Vukosi Marivate · Davor Orlic
+              </div>
+              <!-- <div class="m-4"> -->
+              <!--     <img height="100" -->
+              <!--          src="https://iclr.github.io/iclr-images/workshops/"/> -->
+              <!-- </div> -->
+              <div class="m-3 text-left card-subtitle font-italic">
+                Showcase work on NLP for African languages, which are typically low resource languages, and bring it to a global audience.
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-sm-12 p-3"
+          style="box-sizing: border-box;">
+          <div class="card"
+            style="display:block; overflow:hidden; width:100%;">
+            <div class="card-header text-center"
+              style="min-height: 200px; width:100%;">
+              <a class="text-muted" href="workshops_11.html">
+                <h3 class="card-title main-title">
+                  AI for Affordable Healthcare
+                </h3>
+              </a>
+              <div class="card-subtitle text-muted">
+                Alison O&#39;Neil · Aneta Lisowska · Tewodros Bekele · Ashenafi Gutema · Emanuele Trucco
+              </div>
+              <!-- <div class="m-4"> -->
+              <!--     <img height="100" -->
+              <!--          src="https://iclr.github.io/iclr-images/workshops/"/> -->
+              <!-- </div> -->
+              <div class="m-3 text-left card-subtitle font-italic">
+                Highlight recent advances in AI for enabling, democratising, and upholding high standards of healthcare worldwide.
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-sm-12 p-3"
+          style="box-sizing: border-box;">
+          <div class="card"
+            style="display:block; overflow:hidden; width:100%;">
+            <div class="card-header text-center"
+              style="min-height: 200px; width:100%;">
+              <a class="text-muted" href="workshops_12.html">
+                <h3 class="card-title main-title">
+                  Beyond &#39;tabula rasa&#39; in reinforcement learning: agents that remember, adapt, and generalize
+                </h3>
+              </a>
+              <div class="card-subtitle text-muted">
+                Louis Kirsch · Ignasi Clavera · Kate Rakelly · Chelsea Finn · Jane Wang · Jeff Clune
+              </div>
+              <!-- <div class="m-4"> -->
+              <!--     <img height="100" -->
+              <!--          src="https://iclr.github.io/iclr-images/workshops/"/> -->
+              <!-- </div> -->
+              <div class="m-3 text-left card-subtitle font-italic">
+                Bring together researchers from different backgrounds working on how to extend current RL algorithms to operate in changing environments and tasks.
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-sm-12 p-3"
+          style="box-sizing: border-box;">
+          <div class="card"
+            style="display:block; overflow:hidden; width:100%;">
+            <div class="card-header text-center"
+              style="min-height: 200px; width:100%;">
+              <a class="text-muted" href="workshops_13.html">
+                <h3 class="card-title main-title">
+                  Computer Vision for Agriculture (CV4A)
+                </h3>
+              </a>
+              <div class="card-subtitle text-muted">
+                Yannis Kalantidis · Laura Sevilla · Ernest Mwebaze · David Guerena · Hamed Alemohammad · Dina Machuve
+              </div>
+              <!-- <div class="m-4"> -->
+              <!--     <img height="100" -->
+              <!--          src="https://iclr.github.io/iclr-images/workshops/"/> -->
+              <!-- </div> -->
+              <div class="m-3 text-left card-subtitle font-italic">
+                Expose the progress and unsolved problems of computational agriculture to the AI research community.
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-sm-12 p-3"
+          style="box-sizing: border-box;">
+          <div class="card"
+            style="display:block; overflow:hidden; width:100%;">
+            <div class="card-header text-center"
+              style="min-height: 200px; width:100%;">
+              <a class="text-muted" href="workshops_14.html">
+                <h3 class="card-title main-title">
+                  Workshop on Causal Learning For Decision Making
+                </h3>
+              </a>
+              <div class="card-subtitle text-muted">
+                Nan Rosemary Ke · Anirudh Goyal Alias Parth Goyal · Jane Wang · Silvia Chiappa · Jovana Mitrovic · Theophane Weber · Danilo Jimenez Rezende · Stefan Bauer
+              </div>
+              <!-- <div class="m-4"> -->
+              <!--     <img height="100" -->
+              <!--          src="https://iclr.github.io/iclr-images/workshops/"/> -->
+              <!-- </div> -->
+              <div class="m-3 text-left card-subtitle font-italic">
+                Investigate how much progress is possible by framing the learning problem beyond learning correlations, that is, by uncovering and leveraging causal relations.
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-sm-12 p-3"
+          style="box-sizing: border-box;">
+          <div class="card"
+            style="display:block; overflow:hidden; width:100%;">
+            <div class="card-header text-center"
+              style="min-height: 200px; width:100%;">
+              <a class="text-muted" href="workshops_15.html">
+                <h3 class="card-title main-title">
+                  Practical ML for Developing Countries: learning under limited/low resource scenarios
+                </h3>
+              </a>
+              <div class="card-subtitle text-muted">
+                Esube Bekele · Ioana Baldini · Nyalleng Moorosi · Vukosi Marivate · VICTOR Dibia · Amanuel Mersha · Tewodros Gebreselassie · Meareg Hailemariam · Michael Melese · Timnit Gebru · Red Abebe · Waheeda Saib
+              </div>
+              <!-- <div class="m-4"> -->
+              <!--     <img height="100" -->
+              <!--          src="https://iclr.github.io/iclr-images/workshops/"/> -->
+              <!-- </div> -->
+              <div class="m-3 text-left card-subtitle font-italic">
+                Bring together researchers, experts, policy makers, and related stakeholders under the umbrella of practical ML for developing countries.
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <script type="text/javascript">
+  $(document).ready(function () {
+  
+  if (location.hash !== '') {
+  $('a[href="' + location.hash + '"]').tab('show');
+  }
+  
+  $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+  var hash = $(e.target).attr("href");
+  if (hash.substr(0,1) == "#") {
+  var position = $(window).scrollTop();
+  location.replace("#" + hash.substr(1));
+  $(window).scrollTop(position);
+  }
+  });
+  
+  });
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163955028-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  gtag('config', 'UA-163955028-1');
+</script>
+<footer class="footer bg-light p-4">
+  <div class="container">
+    <p class="float-right"><a href="#">Back to Top</a></p>
+    <p class="text-center">© 2020 International Conference on Learning Representations</p>
+  </div>
+</footer>
+  </body>
+</html>

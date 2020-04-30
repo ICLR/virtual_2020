@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+  
+  <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="static/css/main.css">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js"
+    integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="static/js/typeahead.bundle.js"></script>
+  <link rel="stylesheet" href="static/css/typeahead.css">
+  <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/lazy_load.css">
+  <script src="static/js/lazy_load.js"></script>
+  <title> ICLR: Behaviour Suite for Reinforcement Learning </title>
+</head>
+  <meta name="citation_title" content="Behaviour Suite for Reinforcement Learning" />
+  
+  <meta name="citation_author" content="Ian Osband" />
+  
+  <meta name="citation_author" content="Yotam Doron" />
+  
+  <meta name="citation_author" content="Matteo Hessel" />
+  
+  <meta name="citation_author" content="John Aslanides" />
+  
+  <meta name="citation_author" content="Eren Sezener" />
+  
+  <meta name="citation_author" content="Andre Saraiva" />
+  
+  <meta name="citation_author" content="Katrina McKinney" />
+  
+  <meta name="citation_author" content="Tor Lattimore" />
+  
+  <meta name="citation_author" content="Csaba Szepesvari" />
+  
+  <meta name="citation_author" content="Satinder Singh" />
+  
+  <meta name="citation_author" content="Benjamin Van Roy" />
+  
+  <meta name="citation_author" content="Richard Sutton" />
+  
+  <meta name="citation_author" content="David Silver" />
+  
+  <meta name="citation_author" content="Hado Van Hasselt" />
+  
+  <meta name="citation_publication_date" content="2020/04"/>
+  <meta name="citation_conference_title" content="Eighth International Conference on Learning Representations" />
+  <meta name="citation_abstract" content="This paper introduces the Behaviour Suite for Reinforcement Learning, or bsuite for short. bsuite is a collection of carefully-designed experiments that investigate core capabilities of reinforcement learning (RL) agents with two objectives. First, to collect clear, informative and scalable problems that capture key issues in the design of general and efficient learning algorithms. Second, to study agent behaviour through their performance on these shared benchmarks. To complement this effort, we open source this http URL, which automates evaluation and analysis of any agent on bsuite. This library facilitates reproducible and accessible research on the core issues in RL, and ultimately the design of superior learning algorithms. Our code is Python, and easy to use within existing projects. We include examples with OpenAI Baselines, Dopamine as well as new reference implementations. Going forward, we hope to incorporate more excellent experiments from the research community, and commit to a periodic review of bsuite from a committee of prominent researchers." />
+  <meta name="citation_pdf_url" content="http://www.openreview.net/pdf?id=rygf-kSYwH" />
+  
+  <meta name="citation_keywords" content="reinforcement learning" />
+  
+  <meta name="citation_keywords" content="reproducibility" />
+  
+  <meta name="citation_keywords" content="scalability" />
+  
+  <body >
+    <!-- NAV -->
+    
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Exo" rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css?family=Cuprum" rel='stylesheet'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+  integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.28/moment-timezone-with-data.min.js"
+  integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww="
+  crossorigin="anonymous"></script>
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto " id="main-nav" >
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+    <img class="logo" style='visibility: ' src="static/images/ICLR-logo.png"  width="180px" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-right flex-grow-1" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="index.html">Home</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="calendar.html">Schedule</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="workshops.html">Workshops</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="papers.html">Papers</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="about.html">Help</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container">
+      <!-- Title -->
+      <div class="pp-card m-3" style="">
+        <div class="card-header">
+          <h2 class="card-title main-title text-center" style="">
+            Behaviour Suite for Reinforcement Learning
+          </h2>
+          <h3 class="card-subtitle mb-2 text-muted text-center">
+            
+            <a href="papers.html?filter=authors&search=Ian Osband" class="text-muted">Ian Osband</a>,
+            
+            <a href="papers.html?filter=authors&search=Yotam Doron" class="text-muted">Yotam Doron</a>,
+            
+            <a href="papers.html?filter=authors&search=Matteo Hessel" class="text-muted">Matteo Hessel</a>,
+            
+            <a href="papers.html?filter=authors&search=John Aslanides" class="text-muted">John Aslanides</a>,
+            
+            <a href="papers.html?filter=authors&search=Eren Sezener" class="text-muted">Eren Sezener</a>,
+            
+            <a href="papers.html?filter=authors&search=Andre Saraiva" class="text-muted">Andre Saraiva</a>,
+            
+            <a href="papers.html?filter=authors&search=Katrina McKinney" class="text-muted">Katrina McKinney</a>,
+            
+            <a href="papers.html?filter=authors&search=Tor Lattimore" class="text-muted">Tor Lattimore</a>,
+            
+            <a href="papers.html?filter=authors&search=Csaba Szepesvari" class="text-muted">Csaba Szepesvari</a>,
+            
+            <a href="papers.html?filter=authors&search=Satinder Singh" class="text-muted">Satinder Singh</a>,
+            
+            <a href="papers.html?filter=authors&search=Benjamin Van Roy" class="text-muted">Benjamin Van Roy</a>,
+            
+            <a href="papers.html?filter=authors&search=Richard Sutton" class="text-muted">Richard Sutton</a>,
+            
+            <a href="papers.html?filter=authors&search=David Silver" class="text-muted">David Silver</a>,
+            
+            <a href="papers.html?filter=authors&search=Hado Van Hasselt" class="text-muted">Hado Van Hasselt</a>
+            
+          </h3>
+          <p class="card-text text-center"><span class="">Keywords:</span>
+            
+            <a href="papers.html?filter=keywords&search=reinforcement learning" class="text-secondary text-decoration-none">reinforcement learning</a>,
+            
+            <a href="papers.html?filter=keywords&search=reproducibility" class="text-secondary text-decoration-none">reproducibility</a>,
+            
+            <a href="papers.html?filter=keywords&search=scalability" class="text-secondary text-decoration-none">scalability</a>
+            
+          </p>
+          <div class="text-center p-3">
+            <a class="card-link" data-toggle="collapse" role="button" href="#details">
+            Abstract
+            </a>
+            <a class="card-link"  target="_blank" href="http://www.openreview.net/pdf?id=rygf-kSYwH">
+            Paper
+            </a>
+            
+            <a href="https://github.com/deepmind/bsuite" target="_blank"  class="card-link">
+            Code
+            </a>
+            
+            <a class="card-link"  target="_blank"  href="http://www.openreview.net/forum?id=rygf-kSYwH">
+            Reviews
+            </a>
+            <!--  -->
+            <!-- <a href="38925899" target="_blank"  class="card-link"> -->
+            <!--   Slides -->
+            <!-- </a> -->
+            <!--  -->
+            <!-- </div> -->
+            <!-- <div class="text-center "> -->
+            <!-- <a href="chat.html?room=channel/poster_651" target="_blank"  class="card-link"> -->
+            <!-- Chat -->
+            <!-- </a> -->
+          </div>
+          <div class=" text-center text-muted text-monospace ">
+            
+            <div> Monday: Reliable RL 
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div id="details" class="pp-card m-3 collapse">
+        <div class="card-body">
+          <p class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            This paper introduces the Behaviour Suite for Reinforcement Learning, or bsuite for short. bsuite is a collection of carefully-designed experiments that investigate core capabilities of reinforcement learning (RL) agents with two objectives. First, to collect clear, informative and scalable problems that capture key issues in the design of general and efficient learning algorithms. Second, to study agent behaviour through their performance on these shared benchmarks. To complement this effort, we open source this http URL, which automates evaluation and analysis of any agent on bsuite. This library facilitates reproducible and accessible research on the core issues in RL, and ultimately the design of superior learning algorithms. Our code is Python, and easy to use within existing projects. We include examples with OpenAI Baselines, Dopamine as well as new reference implementations. Going forward, we hope to incorporate more excellent experiments from the research community, and commit to a periodic review of bsuite from a committee of prominent researchers.
+          </div>
+          </p>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <!-- SlidesLive -->
+    <div class="container" style="background-color:white; padding: 0px;">
+      <div class="row m-2">
+        <div class="col-md-12 col-xs-12 my-auto p-2" >
+
+          <div id="presentation-embed-38925899" class="slp my-auto"></div>
+          <script src='https://slideslive.com/embed_presentation.js'></script>
+          <script>
+            embed = new SlidesLiveEmbed('presentation-embed-38925899', {
+            presentationId: '38925899',
+            autoPlay: false, // change to true to autoplay the embedded presentation
+            verticalEnabled: true,
+            allowHiddenControlsWhenPaused: true,
+            hideTitle: true
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recs -->
+    <p></p>
+    <div  class="container" style="padding-bottom: 30px; padding-top:30px">
+      <center>
+        <h2> Similar Papers </h2>
+      </center>
+    </div>
+    <p></p>
+    <div  class="container" >
+      <div class="row">
+        
+        <div class="col-md-4 col-xs-6">
+          <div class="pp-card" >
+            <div class="pp-card-header" class="text-muted">
+              <a href="poster_r1etN1rtPB.html" class="text-muted">
+                <h5 class="card-title" align="center">Implementation Matters in Deep RL: A Case Study on PPO and TRPO</h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Logan Engstrom,
+                
+                Andrew Ilyas,
+                
+                Shibani Santurkar,
+                
+                Dimitris Tsipras,
+                
+                Firdaus Janoos,
+                
+                Larry Rudolph,
+                
+                Aleksander Madry,
+                
+              </h6>
+              <center><img class="cards_img" src="https://iclr.github.io/iclr-images/r1etN1rtPB.png" width="80%"/></center>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-xs-6">
+          <div class="pp-card" >
+            <div class="pp-card-header" class="text-muted">
+              <a href="poster_SJlpYJBKvH.html" class="text-muted">
+                <h5 class="card-title" align="center">Measuring the Reliability of Reinforcement Learning Algorithms</h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Stephanie C.Y. Chan,
+                
+                Samuel Fishman,
+                
+                Anoop Korattikara,
+                
+                John Canny,
+                
+                Sergio Guadarrama,
+                
+              </h6>
+              <center><img class="cards_img" src="https://iclr.github.io/iclr-images/SJlpYJBKvH.png" width="80%"/></center>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-xs-6">
+          <div class="pp-card" >
+            <div class="pp-card-header" class="text-muted">
+              <a href="poster_rylVHR4FPB.html" class="text-muted">
+                <h5 class="card-title" align="center">Sampling-Free Learning of Bayesian Quantized Neural Networks</h5>
+              </a>
+              <h6 class="card-subtitle text-muted" align="center">
+                
+                Jiahao Su,
+                
+                Milan Cvitkovic,
+                
+                Furong Huang,
+                
+              </h6>
+              <center><img class="cards_img" src="https://iclr.github.io/iclr-images/rylVHR4FPB.png" width="80%"/></center>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <script type="text/javascript">
+  $(document).ready(function () {
+  
+  if (location.hash !== '') {
+  $('a[href="' + location.hash + '"]').tab('show');
+  }
+  
+  $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+  var hash = $(e.target).attr("href");
+  if (hash.substr(0,1) == "#") {
+  var position = $(window).scrollTop();
+  location.replace("#" + hash.substr(1));
+  $(window).scrollTop(position);
+  }
+  });
+  
+  });
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163955028-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  gtag('config', 'UA-163955028-1');
+</script>
+<footer class="footer bg-light p-4">
+  <div class="container">
+    <p class="float-right"><a href="#">Back to Top</a></p>
+    <p class="text-center">© 2020 International Conference on Learning Representations</p>
+  </div>
+</footer>
+  </body>
+  <script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+</html>
