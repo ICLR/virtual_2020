@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="static/css/main.css">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js"
+    integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="static/js/typeahead.bundle.js"></script>
+  <link rel="stylesheet" href="static/css/typeahead.css">
+  <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/lazy_load.css">
+  <script src="static/js/lazy_load.js"></script>
+  <title> ICLR: Reflections from the Turing Award Winners </title>
+</head>
+  <body>
+    <!-- NAV -->
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Exo" rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css?family=Cuprum" rel='stylesheet'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+  integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.28/moment-timezone-with-data.min.js"
+  integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww="
+  crossorigin="anonymous"></script>
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto " id="main-nav" >
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+    <img class="logo" style='visibility: ' src="static/images/ICLR-logo.png"  width="180px" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-right flex-grow-1" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="index.html">Home</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="calendar.html">Schedule</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="workshops.html">Workshops</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="papers.html">Papers</a>
+          
+        </li>
+        
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="about.html">Help</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container">
+      <!-- Title -->
+      <div class="pp-card m-3" style="">
+        <div class="card-header">
+          <h2 class="card-title main-title text-center" style="">
+            Reflections from the Turing Award Winners
+          </h2>
+          <h3 class="card-subtitle mb-2 text-muted text-center">
+            Profs. Yann LeCun and Yoshua Bengio / Facebook AI + NYU / MILA
+          </h3>
+          <div class="text-center p-3">
+            <a class="card-link" data-toggle="collapse" role="button" href="#details">
+            Abstract & Bio
+            </a>
+          </div>          
+        </div>
+      </div>
+      <div id="details" class="pp-card m-3 collapse">
+        <div class="card-body">
+          <p class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            <i>Yoshua Bengio (Deep Learning Priors Associated with Conscious Processing)</i>: Some of the aspects of the world around us are captured in natural language and refer to semantic high-level variables, which often have a causal role (referring to agents, objects, and actions or intentions). These high-level variables also seem to satisfy very peculiar characteristics which low-level data (like images or sounds) do not share, and this work is about characterizing these characteristics in the form of priors which can guide the design of machine learning systems benefitting from these priors. Since these priors are not just about their joint distribution (e.g. it has a sparse factor graph) but also about how the distribution changes (typically by causal interventions), this analysis may also help to build machine learning systems which can generalize better out-of-distribution. There are fascinating connections between these priors and what is hypothesized about conscious processing in the brain, with conscious processing allowing us to reason (i.e., perform chains of inferences about the past and the future, as well as credit assignment) at the level of these high-level variables. This involves attention mechanisms and short-term memory to form a bottleneck of information being broadcast around the brain between different parts of it, as we focus on different high-level variables and some of their interactions. The presentation summarizes a few recent results using some of these ideas for discovering causal structure and modularizing recurrent neural networks with attention mechanisms in order to obtain better out-of-distribution generalization. <br><br> <i>Yann LeCun (The Future is Self-Supervised)</i>: Humans and animals learn enormous amount of background knowledge about the world in the early months of life with little supervision and almost no interactions. How can we reproduce this learning paradigm in machines? One proposal for doing so is Self-Supervised Learning (SSL) in which a system is trained to predict a part of the input from the rest of the input. SSL, in the form of denoising auto-encoder, has been astonishingly successful for learning task-independent representations of text. But the success has not been translated to images and videos. The main obstacle is how to represent uncertainty in high-dimensional continuous spaces in which probability densities are generally intractable. We propose to use Energy-Based Models (EBM) to represent data manifolds or level-sets of distributions on the variables to be predicted. There are two classes of methods to train EBMs: (1) contrastive methods that push down on the energy of data points and push up elsewhere; (2) architectural and regularizing methods that limit or minimize the volume of space that can take low energies by regularizing the information capacity of a latent variable. While contrastive methods have been somewhat successful to learn image features, they are very expensive computationally. I will propose that the future of self-supervised representation learning lies in regularized latent-variable energy-based models.  <br><br>
+
+            <span class="font-weight-bold">Bio:</span>
+            Yoshua Bengio is recognized as one of the world’s artificial intelligence leaders and a pioneer of deep learning. Professor since 1993 at the Université de Montréal, he received the A.M. Turing Award 2018, considered like the Nobel prize for computing, with Geoff Hinton and Yann LeCun. Holder of the Canada Research Chair in Statistical Learning Algorithms, he is also the founder and scientific director of Mila, the Quebec Institute of AI–the world’s biggest university-based research group in deep learning. In 2018, he collected the largest number of new citations in the world for a computer scientist and earned the prestigious Killam Prize from the Canada Council for the Arts. Concerned about the social impact of AI, he actively contributed to the Montreal Declaration for the Responsible Development of Artificial Intelligence.
+Yann LeCun is VP and Chief AI Scientist at Facebook and Silver Professor at NYU affiliated with the Courant Institute and the Center for Data Science. He was the founding Director of Facebook AI Research and of the NYU Center for Data Science. He received an EE Diploma from ESIEE (Paris) in 1983, a PhD in Computer Science from Université Pierre et Marie Curie (Paris) in 1987. After a postdoc at the University of Toronto, he joined AT&amp;T Bell Laboratories. He became head of the Image Processing Research Department at AT&amp;T Labs-Research in 1996, and joined NYU in 2003 after a short tenure at the NEC Research Institute. In late 2013, LeCun became Director of AI Research at Facebook, while remaining on the NYU Faculty part-time. He was visiting professor at Collège de France in 2016. His research interests include machine learning and artificial intelligence, with applications to computer vision, natural language understanding, robotics, and computational neuroscience. He is best known for his work in deep learning and the invention of the convolutional network method which is widely used for image, video and speech recognition. He is a member of the US National Academy of Engineering, a Chevalier de la Légion d’Honneur, a fellow of AAAI, the recipient of the 2014 IEEE Neural Network Pioneer Award, the 2015 IEEE Pattern Analysis and Machine Intelligence Distinguished Researcher Award, the 2016 Lovie Award for Lifetime Achievement, the University of Pennsylvania Pender Award, and honorary doctorates from IPN, Mexico and EPFL. He is the recipient of the 2018 ACM Turing Award (with Geoffrey Hinton and Yoshua Bengio) for “conceptual and engineering breakthroughs that have made deep neural networks a critical component of computing.” 
+          </div>
+          </p>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <!-- SlidesLive -->
+    <div class="container" style="background-color:white; padding: 0px;">
+      <div class="row m-2">
+        <div class="col-md-12 col-xs-12 my-auto p-2" >
+          <div id="presentation-embed-38926952" class="slp my-auto"></div>
+          <script src='https://slideslive.com/embed_presentation.js'></script>
+          <script>
+            embed = new SlidesLiveEmbed('presentation-embed-38926952', {
+            presentationId: '38926952',
+            autoPlay: false, // change to true to autoplay the embedded presentation
+            verticalEnabled: true,
+            allowHiddenControlsWhenPaused: true,
+            hideTitle: true
+            });
+          </script>
+        </div>
+
+    <div  id="stream" class="container" style="padding-bottom: 30px; padding-top:30px">
+      
+        <center>
+          <h2>
+
+            Question and Answer Session
+          </h2>
+
+        </center>
+
+
+        
+        </div>
+        <div class="col-md-12 col-xs-12 my-auto p-2" >
+          <div id="presentation-embed-38926919" class="slp my-auto"></div>
+          <script src='https://slideslive.com/embed_presentation.js'></script>
+          <script>
+            embed = new SlidesLiveEmbed('presentation-embed-38926919', {
+            presentationId: '38926919',
+            autoPlay: false, // change to true to autoplay the embedded presentation
+            verticalEnabled: true,
+            <!-- verticalWhenWidthLte: 2000, -->
+            allowHiddenControlsWhenPaused: true,
+            hideTitle: true
+            });
+          </script>
+        </div>
+
+        <!-- <div class="col-md-7 col-xs-12 my-auto p-2" > -->
+        <!--   <div id="presentation-embed-38926919" class="slp my-auto"></div> -->
+        <!--   <script src='https://slideslive.com/embed_presentation.js'></script> -->
+        <!--   <script> -->
+        <!--     embed = new SlidesLiveEmbed('presentation-embed-38926919', { -->
+        <!--     presentationId: '38926919', -->
+        <!--     autoPlay: false, // change to true to autoplay the embedded presentation -->
+        <!--     verticalEnabled: true, -->
+        <!--     verticalWhenWidthLte: 2000, -->
+        <!--     allowHiddenControlsWhenPaused: true, -->
+        <!--     hideTitle: true -->
+        <!--     }); -->
+        <!--   </script> -->
+        <!-- </div> -->
+      </div>
+
+      
+    </div>
+    <script type="text/javascript">
+  $(document).ready(function () {
+  
+  if (location.hash !== '') {
+  $('a[href="' + location.hash + '"]').tab('show');
+  }
+  
+  $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+  var hash = $(e.target).attr("href");
+  if (hash.substr(0,1) == "#") {
+  var position = $(window).scrollTop();
+  location.replace("#" + hash.substr(1));
+  $(window).scrollTop(position);
+  }
+  });
+  
+  });
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163955028-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  gtag('config', 'UA-163955028-1');
+</script>
+<footer class="footer bg-light p-4">
+  <div class="container">
+    <p class="float-right"><a href="#">Back to Top</a></p>
+    <p class="text-center">© 2020 International Conference on Learning Representations</p>
+  </div>
+</footer>
+  <script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
+  </body>
+</html>
